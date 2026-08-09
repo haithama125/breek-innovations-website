@@ -300,6 +300,26 @@
     });
   })();
 
+  (function cleanUrls() {
+    // Intercept in-page anchors so clicking a section doesn't add #foo to the URL
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (!href || href.length < 2) return;
+        const target = document.getElementById(href.slice(1));
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+    // Strip any existing hash on load, preserving scroll position
+    if (location.hash && location.hash.length > 1) {
+      const target = document.getElementById(location.hash.slice(1));
+      history.replaceState(null, '', location.pathname + location.search);
+      if (target) setTimeout(() => target.scrollIntoView({ block: 'start' }), 0);
+    }
+  })();
+
   (function () {
     const links = document.querySelectorAll('.side-nav a[href^="#"]');
     const map = new Map();
