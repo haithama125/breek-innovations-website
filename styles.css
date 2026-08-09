@@ -363,7 +363,7 @@ a { color: inherit; text-decoration: none; }
 .logos-track {
   display: flex;
   width: max-content;
-  animation: logoScroll 32s linear infinite;
+  animation: logoScroll 60s linear infinite;
 }
 .logos-track:hover { animation-play-state: paused; }
 .logos-marquee {
