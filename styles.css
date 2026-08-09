@@ -54,18 +54,23 @@ a { color: inherit; text-decoration: none; }
   height: 100vh;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
 .brand-name {
   font-weight: 800;
   font-size: 19px;
   letter-spacing: -0.01em;
 }
-.brand-tag {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 11px;
-  color: var(--side-mono);
-  margin-top: 4px;
-}
-
 .side-nav {
   display: flex;
   flex-direction: column;
@@ -160,13 +165,29 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 22px;
 }
 .hero h1 {
-  font-size: 60px;
+  font-size: 76px;
   font-weight: 800;
-  line-height: 1.06;
-  letter-spacing: -0.025em;
-  margin: 0 0 24px;
-  max-width: 780px;
+  line-height: 1.05;
+  letter-spacing: -0.028em;
+  margin: 0 0 28px;
+  max-width: 900px;
   text-wrap: pretty;
+}
+.hero h1 .caret {
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  background: var(--green-deep);
+  margin-left: 6px;
+  vertical-align: -0.05em;
+  animation: caretBlink 1s step-end infinite;
+}
+@keyframes caretBlink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 .caret { animation: none; }
 }
 
 /* --- Hero floating cards --- */
@@ -175,15 +196,15 @@ a { color: inherit; text-decoration: none; }
 
 .hero-cards {
   position: relative;
-  height: 380px;
-  transform: translateX(-80px);
+  height: 440px;
+  transform: translateX(-160px);
 }
 .hc {
   position: absolute;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 2px;
-  padding: 16px 18px;
+  padding: 20px 22px;
   box-shadow: 0 12px 32px rgba(22,48,31,0.12);
 }
 .hc-tag {
@@ -212,7 +233,7 @@ a { color: inherit; text-decoration: none; }
 .hc-check {
   top: 12px;
   right: 0;
-  width: 280px;
+  width: 340px;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -221,9 +242,9 @@ a { color: inherit; text-decoration: none; }
 .hc-check .hc-tag { margin-bottom: 3px; }
 
 .hc-dark {
-  top: 118px;
-  right: 34px;
-  width: 262px;
+  top: 138px;
+  right: 40px;
+  width: 314px;
   background: var(--green-deep);
   color: var(--side-ink);
   box-shadow: 0 12px 32px rgba(22,48,31,0.25);
@@ -245,9 +266,9 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hc-progress {
-  top: 224px;
+  top: 264px;
   right: 8px;
-  width: 274px;
+  width: 326px;
   animation: heroFloat 6.5s ease-in-out infinite 1.6s;
 }
 .hc-progress-row {
@@ -272,10 +293,10 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hc-small {
-  top: 322px;
-  right: 48px;
-  width: 240px;
-  padding: 13px 16px;
+  top: 378px;
+  right: 56px;
+  width: 286px;
+  padding: 16px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -318,6 +339,56 @@ a { color: inherit; text-decoration: none; }
   font-size: 11px;
   color: var(--sub);
   margin-top: 6px;
+}
+
+/* --- Logo marquee --- */
+.logos {
+  padding: 44px 0 48px;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.logos-head {
+  padding: 0 56px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--sub);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.logos-viewport {
+  mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+.logos-track {
+  display: flex;
+  width: max-content;
+  animation: logoScroll 32s linear infinite;
+}
+.logos-track:hover { animation-play-state: paused; }
+.logos-marquee {
+  display: flex;
+  gap: 72px;
+  padding-right: 72px;
+  align-items: center;
+}
+.logo-img {
+  width: auto;
+  height: 34px;
+  display: block;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+.logo-img:hover { opacity: 1; }
+.logo-intake,
+.logo-youtube { height: 46px; }
+.logo-nasa { height: 55px; }
+@keyframes logoScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logos-track { animation: none; }
 }
 
 /* --- Sections --- */
@@ -586,9 +657,13 @@ a { color: inherit; text-decoration: none; }
   .hero { padding: 56px 24px 48px; }
   .hero-grid { grid-template-columns: 1fr; gap: 24px; }
   .hero-cards { display: none; }
-  .hero h1 { font-size: 40px; }
+  .hero h1 { font-size: 48px; }
   .lede { font-size: 16px; }
   .stats { grid-template-columns: repeat(2, 1fr); }
+  .logos { padding: 32px 0 36px; }
+  .logos-head { padding: 0 24px; margin-bottom: 20px; }
+  .logo-item { font-size: 22px; }
+  .logos-marquee { gap: 48px; padding-right: 48px; }
   .stat { border-bottom: 1px solid var(--line); }
   .stat:nth-child(2) { border-right: none; }
   .stat:nth-child(3), .stat:nth-child(4) { border-bottom: none; }

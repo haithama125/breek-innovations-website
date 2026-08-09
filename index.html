@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,8 +17,8 @@
 
   <aside class="sidebar">
     <div class="brand">
+      <img src="assets/kettle.png" alt="" class="brand-mark">
       <div class="brand-name">Breek</div>
-      <div class="brand-tag">INNOVATIONS &middot; EST. 2015</div>
     </div>
 
     <nav class="side-nav">
@@ -45,7 +46,6 @@
     <section id="overview" class="hero">
       <div class="hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">SOFTWARE ENGINEERING &middot; MID-MARKET</div>
           <h1>An investment into your own business.</h1>
           <p class="lede">We make you go viral, retain sustainable cash flow, establish a digital presence, and implement efficient systems that reduce your headache.</p>
           <div class="cta-row">
@@ -91,6 +91,30 @@
       <div class="stat"><div class="stat-num">100%</div><div class="stat-label">ON-TIME DELIVERY</div></div>
       <div class="stat"><div class="stat-num">$50k+</div><div class="stat-label">Generated for individual clients</div></div>
       <div class="stat"><div class="stat-num">1</div><div class="stat-label">Point of contact for you</div></div>
+    </section>
+
+    <section class="logos" aria-label="Companies we've worked with">
+      <div class="logos-head">Trusted by builders at</div>
+      <div class="logos-viewport">
+        <div class="logos-track">
+          <div class="logos-marquee">
+            <img src="assets/logos/amazon.svg" alt="Amazon" class="logo-img logo-amazon">
+            <img src="assets/logos/microsoft.svg" alt="Microsoft" class="logo-img logo-microsoft">
+            <img src="assets/logos/nasa.svg" alt="NASA" class="logo-img logo-nasa">
+            <img src="assets/intake-iq.png" alt="Intake.IQ" class="logo-img logo-intake">
+            <img src="assets/logos/youtube.svg" alt="YouTube" class="logo-img logo-youtube">
+            <img src="assets/logos/bluum.png" alt="Bluum Media" class="logo-img logo-bluum">
+          </div>
+          <div class="logos-marquee" aria-hidden="true">
+            <img src="assets/logos/amazon.svg" alt="" class="logo-img logo-amazon">
+            <img src="assets/logos/microsoft.svg" alt="" class="logo-img logo-microsoft">
+            <img src="assets/logos/nasa.svg" alt="" class="logo-img logo-nasa">
+            <img src="assets/intake-iq.png" alt="" class="logo-img logo-intake">
+            <img src="assets/logos/youtube.svg" alt="" class="logo-img logo-youtube">
+            <img src="assets/logos/bluum.png" alt="" class="logo-img logo-bluum">
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="services" class="section">
@@ -222,6 +246,34 @@
 </div>
 
 <script>
+  (function typeHero() {
+    const h1 = document.querySelector('.hero h1');
+    if (!h1) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const text = h1.textContent;
+    h1.style.minHeight = h1.offsetHeight + 'px';
+    if (reduce) {
+      h1.innerHTML = '';
+      h1.append(document.createTextNode(text));
+      const caret = document.createElement('span');
+      caret.className = 'caret';
+      caret.setAttribute('aria-hidden', 'true');
+      h1.append(caret);
+      return;
+    }
+    h1.innerHTML = '<span class="typed"></span><span class="caret" aria-hidden="true"></span>';
+    const typed = h1.querySelector('.typed');
+    let i = 0;
+    const step = () => {
+      typed.textContent = text.slice(0, i);
+      if (i < text.length) {
+        i++;
+        setTimeout(step, 45);
+      }
+    };
+    setTimeout(step, 300);
+  })();
+
   (function () {
     const links = document.querySelectorAll('.side-nav a[href^="#"]');
     const map = new Map();
