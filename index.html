@@ -10,6 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
 
@@ -37,7 +39,7 @@
         RESPONSE: &lt; 24H<br>
         TZ: EST / PT
       </div>
-      <a href="#contact" class="btn btn-accent">Book a call</a>
+      <a href="https://calendly.com/haithama125" target="_blank" rel="noopener" class="btn btn-accent js-calendly">Book a call</a>
     </div>
   </aside>
 
@@ -49,7 +51,7 @@
           <h1>An investment into your own business.</h1>
           <p class="lede">We make you go viral, retain sustainable cash flow, establish a digital presence, and implement efficient systems that reduce your headache.</p>
           <div class="cta-row">
-            <a href="#contact" class="btn btn-primary">Book a call</a>
+            <a href="https://calendly.com/haithama125" target="_blank" rel="noopener" class="btn btn-primary js-calendly">Book a call</a>
             <a href="#services" class="btn btn-outline">Services</a>
           </div>
         </div>
@@ -232,10 +234,10 @@
     <section id="contact" class="contact">
       <div>
         <div class="mono contact-tag">SEC. 07 · CONTACT</div>
-        <h2>Scope your project this week.</h2>
-        <p>30 minutes, senior engineer, written follow-up within 24h.</p>
+        <h2>Interested?</h2>
+        <p>Click here to schedule a call and level up your business.</p>
       </div>
-      <a href="#contact" class="btn btn-accent btn-lg">Book a call</a>
+      <a href="https://calendly.com/haithama125" target="_blank" rel="noopener" class="btn btn-accent btn-lg js-calendly">Book a call</a>
     </section>
 
     <footer class="footer">
@@ -272,6 +274,18 @@
       }
     };
     setTimeout(step, 300);
+  })();
+
+  (function calendly() {
+    const url = 'https://calendly.com/haithama125';
+    document.querySelectorAll('.js-calendly').forEach(el => {
+      el.addEventListener('click', (e) => {
+        if (window.Calendly) {
+          e.preventDefault();
+          window.Calendly.initPopupWidget({ url });
+        }
+      });
+    });
   })();
 
   (function () {
