@@ -382,7 +382,6 @@ a { color: inherit; text-decoration: none; }
 .logo-img:hover { opacity: 1; }
 .logo-intake,
 .logo-youtube { height: 46px; }
-.logo-nasa { height: 55px; }
 @keyframes logoScroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
