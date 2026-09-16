@@ -544,6 +544,37 @@ a { color: inherit; text-decoration: none; }
   justify-content: space-between;
 }
 
+/* --- Legal / long-form pages --- */
+.legal { max-width: 780px; }
+.legal-date {
+  font-size: 11px;
+  color: var(--sub);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: -18px 0 28px;
+}
+.legal p { color: var(--muted); margin: 0 0 16px; }
+.legal ul {
+  color: var(--muted);
+  margin: 0 0 20px;
+  padding-left: 20px;
+}
+.legal li { margin-bottom: 10px; }
+.legal h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 32px 0 12px;
+  letter-spacing: -0.01em;
+}
+.legal strong { color: var(--ink); font-weight: 600; }
+.legal-link {
+  color: var(--green);
+  border-bottom: 1px solid var(--line);
+  transition: border-color 0.15s ease;
+}
+.legal-link:hover { border-color: var(--green); }
+
 /* --- Responsive --- */
 @media (max-width: 960px) {
   .layout {
