@@ -45,13 +45,15 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-a {
-  color: #2e6b47;
-  text-decoration: none;
-}
+@layer base {
+  a {
+    color: #2e6b47;
+    text-decoration: none;
+  }
 
-a:hover {
-  color: #123222;
+  a:hover {
+    color: #123222;
+  }
 }
 
 /* Keyframes matching the design reference */

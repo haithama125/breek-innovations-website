@@ -23,14 +23,16 @@ export function Hero() {
         }}
       >
         {HEADLINE_WORDS.map((word, i) => (
-          <span key={i} className="hero-word">
-            <span
-              style={{
-                animationDelay: `${100 + i * 90}ms`,
-                color: word.accent ? "#2E6B47" : undefined,
-              }}
-            >
-              {word.text}
+          <span key={i}>
+            <span className="hero-word">
+              <span
+                style={{
+                  animationDelay: `${100 + i * 90}ms`,
+                  color: word.accent ? "#2E6B47" : undefined,
+                }}
+              >
+                {word.text}
+              </span>
             </span>
             {i < HEADLINE_WORDS.length - 1 ? " " : ""}
           </span>
