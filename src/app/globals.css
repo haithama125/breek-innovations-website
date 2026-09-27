@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-page: #f5f6f0;
+  --color-ink: #13201a;
+  --color-body: #4d5a51;
+  --color-muted: #6b776f;
+  --color-muted-dark: #9fb8a7;
+  --color-hairline: #dce3da;
+  --color-hairline-soft: #e6ebe4;
+  --color-tint: #edf3ec;
+  --color-tint-2: #f1f5ef;
+  --color-tint-3: #e3eee4;
+  --color-c9: #c9d6cd;
+  --color-3c: #3c4a41;
+
+  --color-green-deep: #123222;
+  --color-green-800: #1a402c;
+  --color-green-700: #245638;
+  --color-green-600: #2e6b47;
+  --color-green-500: #4c8a62;
+  --color-green-450: #4a8a61;
+  --color-green-400: #7bc395;
+  --color-green-300: #9fd0ae;
+
+  --shadow-float: 0 18px 40px rgba(0, 0, 0, 0.22);
+  --shadow-cardhover: 0 24px 50px rgba(18, 50, 34, 0.12);
+  --shadow-cta: 0 8px 24px rgba(46, 107, 71, 0.28);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f5f6f0;
+  color: #13201a;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: #2e6b47;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #123222;
+}
+
+/* Keyframes matching the design reference */
+@keyframes swipeDown {
+  from {
+    transform: translateY(-110%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes floatA {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes floatB {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes chartDraw {
+  from {
+    stroke-dashoffset: 1400;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes tabProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes panelIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes growBar {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* Utility classes we lean on */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Reveal helpers driven by IntersectionObserver */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hero word swipe mask */
+.hero-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0.04em 0 0.1em;
+  margin: -0.04em 0 -0.1em;
+}
+
+.hero-word > span {
+  display: inline-block;
+  animation: swipeDown 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Services row hover */
+.services-row {
+  transition: background 0.2s ease;
+}
+
+.services-row:hover {
+  background: #f1f5ef;
+}
+
+/* Work card hover */
+.work-card {
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.35s;
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgba(18, 50, 34, 0.12);
+}
+
+/* Marquee row */
+.marquee-track {
+  animation: marquee 45s linear infinite;
+}
+
+.marquee-viewport:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Nav pill hovers */
+.pill-dark {
+  background: #123222;
+  color: #f5f6f0;
+  transition: background 0.2s ease;
+}
+
+.pill-dark:hover {
+  background: #2e6b47;
+  color: #f5f6f0;
+}
+
+.pill-primary {
+  background: #2e6b47;
+  color: #ffffff;
+  box-shadow: var(--shadow-cta);
+  transition: background 0.2s ease;
+}
+
+.pill-primary:hover {
+  background: #123222;
+  color: #ffffff;
+}
+
+.pill-outline {
+  background: #ffffff;
+  color: #13201a;
+  border: 1px solid #dce3da;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.pill-outline:hover {
+  border-color: #2e6b47;
+  color: #13201a;
+}
+
+/* Hide the hero floating cards on small screens (spec) */
+@media (max-width: 700px) {
+  .hero-floater {
+    display: none !important;
+  }
+}
+
+/* Reduced-motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .float-a,
+  .float-b,
+  .hero-word > span {
+    animation: none !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
