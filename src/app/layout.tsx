@@ -8,7 +8,16 @@ export const metadata: Metadata = {
   description:
     "Breek Innovations builds websites, apps, social growth, and automation for small and mid-size businesses. One team, one point of contact.",
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      {
+        url: "/favicon-dark.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/favicon.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
   },
   openGraph: {
     title: "Breek Innovations — An investment into your own business",
