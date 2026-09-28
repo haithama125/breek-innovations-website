@@ -12,7 +12,7 @@ const results = [
 export function ResultsMarquee() {
   const doubled = [...results, ...results];
   return (
-    <section className="pb-10 pt-24">
+    <section className="pb-10 pt-10 md:pt-14">
       <h2
         data-reveal="0"
         className="mx-7 mb-11 text-center font-display font-bold"

@@ -329,6 +329,8 @@ body {
 
 .laptop-screen {
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   background: #fbfcf9;
@@ -453,7 +455,11 @@ body {
 }
 
 .dash-body {
+  flex: 1 1 auto;
+  min-height: 0;
   padding: 1.3em 1.3em 1.3em;
+  display: flex;
+  flex-direction: column;
 }
 
 .dash-headline {
@@ -462,6 +468,7 @@ body {
   justify-content: space-between;
   gap: 0.8em;
   margin-bottom: 1em;
+  flex-shrink: 0;
 }
 
 .dash-label {
@@ -518,11 +525,16 @@ body {
 
 .dash-chart {
   position: relative;
+  flex: 1 1 auto;
+  min-height: 6em;
+  display: flex;
+  flex-direction: column;
 }
 
 .dash-chart svg {
+  flex: 1 1 auto;
   width: 100%;
-  height: 9em;
+  min-height: 0;
   display: block;
 }
 
@@ -555,6 +567,7 @@ body {
   font-size: 0.72em;
   letter-spacing: 0.04em;
   color: #9fb8a7;
+  flex-shrink: 0;
 }
 
 .dash-metrics {
@@ -562,6 +575,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 0.6em;
   margin-top: 1.1em;
+  flex-shrink: 0;
 }
 
 .metric-card {

@@ -4,7 +4,7 @@ import { CONTACT_FORM_URL } from "@/lib/config";
 
 export function Hero() {
   return (
-    <section className="mx-auto max-w-[1240px] px-7 pt-14 pb-16 md:pt-24 md:pb-24">
+    <section className="mx-auto max-w-[1240px] px-7 pt-14 pb-4 md:pt-24 md:pb-8">
       <div className="mx-auto max-w-[1000px] text-center">
         <h1
           className="hero-heading font-display font-bold m-0 text-balance"
