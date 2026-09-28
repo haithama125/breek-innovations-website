@@ -123,11 +123,21 @@ body {
 @keyframes laptopIn {
   from {
     opacity: 0;
-    transform: translate(36px, 14px) scale(0.97);
+    transform: translate(0, 20px) scale(0.97);
   }
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes laptopFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
   }
 }
 
@@ -242,21 +252,7 @@ body {
   transform: none;
 }
 
-/* --- Hero layout --- */
-.hero-grid {
-  display: grid;
-  gap: 48px;
-  align-items: center;
-  grid-template-columns: minmax(0, 1fr);
-}
-
-@media (min-width: 960px) {
-  .hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
-    gap: 64px;
-  }
-}
-
+/* --- Hero text entrance --- */
 .hero-heading,
 .hero-sub,
 .hero-cta {
@@ -279,15 +275,17 @@ body {
 .laptop-scene {
   position: relative;
   width: 100%;
-  max-width: 640px;
+  max-width: 1080px;
   margin-inline: auto;
 }
 
 .laptop-wrap {
   position: relative;
   opacity: 0;
-  transform: translate(36px, 14px) scale(0.97);
-  animation: laptopIn 1s var(--ease-premium) 0.5s forwards;
+  transform: translate(0, 20px) scale(0.97);
+  animation:
+    laptopIn 1s var(--ease-premium) 0.5s forwards,
+    laptopFloat 8s ease-in-out 1.7s infinite;
 }
 
 .laptop-body {
@@ -338,7 +336,7 @@ body {
   overflow: hidden;
   container-type: inline-size;
   container-name: dash;
-  font-size: clamp(9.5px, 2.05cqw, 13px);
+  font-size: clamp(10px, 1.6cqw, 18px);
   color: #13201a;
   opacity: 0;
   animation: screenOn 0.55s ease 1.3s forwards;
@@ -648,7 +646,7 @@ body {
 
 .pill-outline {
   background: #ffffff;
-  color: #13201a;
+  color: #000000;
   border: 1px solid #dce3da;
   transition:
     border-color 0.2s ease,
@@ -656,7 +654,7 @@ body {
 }
 .pill-outline:hover {
   border-color: #2e6b47;
-  color: #13201a;
+  color: #000000;
 }
 
 /* --- Reduced motion --- */
@@ -680,6 +678,7 @@ body {
 
   .chart-line {
     stroke-dashoffset: 0 !important;
+    stroke: #2e6b47 !important;
   }
 
   [data-reveal] {

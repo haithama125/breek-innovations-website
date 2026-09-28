@@ -142,6 +142,41 @@ export function LaptopVisual() {
                             stopOpacity="0"
                           />
                         </linearGradient>
+                        <linearGradient
+                          id="dashLine"
+                          x1="0"
+                          y1="0"
+                          x2="1"
+                          y2="0"
+                        >
+                          <stop offset="0" stopColor="#2E6B47">
+                            <animate
+                              attributeName="offset"
+                              values="-0.4;1.4"
+                              dur="5.5s"
+                              begin="6s;lineHi.end+2.8s"
+                              id="lineLo1"
+                            />
+                          </stop>
+                          <stop offset="0.15" stopColor="#7BC395">
+                            <animate
+                              attributeName="offset"
+                              values="-0.25;1.55"
+                              dur="5.5s"
+                              begin="6s;lineHi.end+2.8s"
+                              id="lineHi"
+                            />
+                          </stop>
+                          <stop offset="0.3" stopColor="#2E6B47">
+                            <animate
+                              attributeName="offset"
+                              values="-0.1;1.7"
+                              dur="5.5s"
+                              begin="6s;lineHi.end+2.8s"
+                              id="lineLo2"
+                            />
+                          </stop>
+                        </linearGradient>
                       </defs>
                       <line
                         x1="0"
@@ -172,7 +207,7 @@ export function LaptopVisual() {
                       <path
                         d={LINE_PATH}
                         fill="none"
-                        stroke="#2E6B47"
+                        stroke="url(#dashLine)"
                         strokeWidth={2.2}
                         strokeLinejoin="round"
                         strokeLinecap="round"
