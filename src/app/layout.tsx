@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import { ContactModalProvider } from "@/components/ContactFormModal";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://breek-innovations.com"),
@@ -55,7 +56,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {children}
+        <ContactModalProvider>{children}</ContactModalProvider>
         <Script
           src="https://assets.calendly.com/assets/external/widget.js"
           strategy="afterInteractive"

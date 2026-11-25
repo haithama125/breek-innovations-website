@@ -1,6 +1,6 @@
 import { BookACall } from "./BookACall";
 import { LaptopVisual } from "./LaptopVisual";
-import { CONTACT_FORM_URL } from "@/lib/config";
+import { ContactTrigger } from "./ContactFormModal";
 
 export function Hero() {
   return (
@@ -32,14 +32,12 @@ export function Hero() {
           <BookACall className="text-base px-[30px] py-4">
             Book a call
           </BookACall>
-          <a
-            href={CONTACT_FORM_URL}
-            target="_blank"
-            rel="noopener"
+          <ContactTrigger
+            source="hero"
             className="pill-outline inline-flex items-center justify-center rounded-full px-[30px] py-4 text-base font-semibold"
           >
             Get in touch
-          </a>
+          </ContactTrigger>
         </div>
       </div>
       <div className="mt-14 md:mt-20">

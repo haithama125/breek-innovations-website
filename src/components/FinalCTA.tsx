@@ -1,5 +1,5 @@
 import { BookACall } from "./BookACall";
-import { CONTACT_EMAIL } from "@/lib/config";
+import { ContactTrigger } from "./ContactFormModal";
 
 export function FinalCTA() {
   return (
@@ -33,12 +33,12 @@ export function FinalCTA() {
           >
             Book a call
           </BookACall>
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
+          <ContactTrigger
+            source="final-cta"
             className="inline-flex items-center justify-center rounded-full border border-white/35 px-[34px] py-[17px] text-base font-semibold text-[#F0F4EF] hover:border-[#F0F4EF] transition-colors"
           >
-            {CONTACT_EMAIL}
-          </a>
+            Get in touch
+          </ContactTrigger>
         </div>
       </div>
     </section>
