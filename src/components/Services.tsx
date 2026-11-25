@@ -18,10 +18,16 @@ const rows = [
     delay: 120,
   },
   {
+    name: "Generative Engine Optimization",
+    desc: "Get recommended when customers ask ChatGPT, Perplexity, Gemini, and Google AI Overviews for options in your space",
+    duration: "Ongoing",
+    delay: 180,
+  },
+  {
     name: "Mastermind Consulting",
     desc: "We evaluate your digital presence, cut out waste, map your best next steps, and automate processes with AI",
     duration: "2–4 weeks",
-    delay: 180,
+    delay: 240,
   },
 ];
 
