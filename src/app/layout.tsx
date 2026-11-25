@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { ContactModalProvider } from "@/components/ContactFormModal";
+import { BookingModalProvider } from "@/components/BookingModal";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://breek-innovations.com"),
@@ -56,7 +57,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ContactModalProvider>{children}</ContactModalProvider>
+        <BookingModalProvider>
+          <ContactModalProvider>{children}</ContactModalProvider>
+        </BookingModalProvider>
         <Script
           src="https://assets.calendly.com/assets/external/widget.js"
           strategy="afterInteractive"

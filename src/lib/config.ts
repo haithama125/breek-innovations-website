@@ -1,6 +1,12 @@
 export const CALENDLY_URL = "https://calendly.com/haithama125";
 export const CONTACT_EMAIL = "hello@breek-innovations.com";
 
+// Paste the deployed scripts/booking.gs Web App URL here. If empty, the
+// Book-a-call buttons fall back to the Calendly popup above.
+export const BOOKING_WEBHOOK_URL =
+  process.env.NEXT_PUBLIC_BOOKING_URL ??
+  "https://script.google.com/macros/s/AKfycbxzatKfD7EuyPVDrU99nCpQbuo8VP9Fwm7hisqQucNGSgiD2swPnUBUkbKv8tkflhwu/exec";
+
 // Paste the deployed Google Apps Script web-app URL here.
 // Setup: create a sheet, Extensions → Apps Script, paste the snippet from
 // scripts/contact-sheet.gs, deploy as Web App (Anyone with the link, execute
