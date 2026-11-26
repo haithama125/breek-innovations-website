@@ -644,28 +644,32 @@ function SuccessState({
         <span className="font-semibold text-[#13201A]">{confirmed.email}</span>. Check your
         inbox (and spam folder).
       </p>
-      <div className="mx-auto mt-4 inline-block rounded-2xl border border-[#DCE3DA] bg-white px-5 py-3 text-left">
-        <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#6B776F]">
-          Confirmed
-        </div>
-        <div className="mt-0.5 font-display text-[18px] font-bold leading-tight tracking-[-0.02em] text-[#13201A]">
-          {start.toLocaleDateString(undefined, {
-            weekday: "long",
-            month: "long",
-            day: "numeric",
-          })}
-        </div>
-        <div className="text-[14px] text-[#4D5A51]">
-          {formatTime(confirmed.startISO)}–{formatTime(end.toISOString())} ({shortTz(viewerTz)})
+      <div className="mt-4 flex justify-center">
+        <div className="rounded-2xl border border-[#DCE3DA] bg-white px-5 py-3 text-left">
+          <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#6B776F]">
+            Confirmed
+          </div>
+          <div className="mt-0.5 font-display text-[18px] font-bold leading-tight tracking-[-0.02em] text-[#13201A]">
+            {start.toLocaleDateString(undefined, {
+              weekday: "long",
+              month: "long",
+              day: "numeric",
+            })}
+          </div>
+          <div className="text-[14px] text-[#4D5A51]">
+            {formatTime(confirmed.startISO)}–{formatTime(end.toISOString())} ({shortTz(viewerTz)})
+          </div>
         </div>
       </div>
-      <button
-        type="button"
-        onClick={onClose}
-        className="pill-primary mt-6 inline-flex items-center justify-center rounded-full px-7 py-3 text-[15px] font-semibold"
-      >
-        Done
-      </button>
+      <div className="mt-6 flex justify-center">
+        <button
+          type="button"
+          onClick={onClose}
+          className="pill-primary inline-flex items-center justify-center rounded-full px-7 py-3 text-[15px] font-semibold"
+        >
+          Done
+        </button>
+      </div>
     </div>
   );
 }
