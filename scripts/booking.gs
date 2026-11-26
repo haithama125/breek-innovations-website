@@ -112,7 +112,8 @@ function doPost(e) {
       p.phone ? "Phone: " + p.phone : null,
       p.message ? "\nWhat they want to discuss:\n" + p.message : null,
       "",
-      "Calendar event: " + event.getHtmlLink(),
+      "Event ID: " + event.getId(),
+      "(Open the calendar invite above to view or edit the event.)",
     ]
       .filter(function (x) { return x !== null; })
       .join("\n");
