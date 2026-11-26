@@ -2,7 +2,6 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { ResultsMarquee } from "@/components/ResultsMarquee";
 import { WhyUs } from "@/components/WhyUs";
-import { Services } from "@/components/Services";
 import { Work } from "@/components/Work";
 import { Testimonials } from "@/components/Testimonials";
 import { HowItWorks } from "@/components/HowItWorks";
@@ -19,7 +18,6 @@ export default function HomePage() {
         <Hero />
         <ResultsMarquee />
         <WhyUs />
-        <Services />
         <Work />
         <Testimonials />
         <HowItWorks />

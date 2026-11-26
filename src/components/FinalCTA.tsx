@@ -21,7 +21,7 @@ export function FinalCTA() {
             letterSpacing: "-0.045em",
           }}
         >
-          We do the tech stuff so you don&apos;t have to.
+          Custom systems that fix every level of your business.
         </h2>
         <p className="m-0 mb-9 text-lg text-[#C9D6CD]">
           30 minutes with a senior engineer. Written follow-up within 24 hours.
