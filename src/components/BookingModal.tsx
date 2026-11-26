@@ -372,7 +372,7 @@ function Stepper({ step, hasSlot }: { step: Step; hasSlot: boolean }) {
               {done ? "✓" : n}
             </span>
             <span className={active || done ? "text-[#F0F4EF]" : undefined}>{label}</span>
-            {n < items.length && <span className="mx-1 text-white/25">—</span>}
+            {n < items.length && <span className="mx-1 text-white/25">·</span>}
           </li>
         );
       })}

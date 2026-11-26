@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { CONTACT_EMAIL } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions — Breek Innovations",
+  title: "Terms and Conditions | Breek Innovations",
   description:
     "Terms and conditions for using the Breek Innovations LLC website and services.",
 };

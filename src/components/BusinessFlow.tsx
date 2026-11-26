@@ -274,7 +274,7 @@ export function BusinessFlow() {
     }
 
     if (reduce) {
-      // Render a static, settled frame — no loop.
+      // Render a static, settled frame (no loop).
       renderFrame(1.0);
       return () => {
         serviceHandlers.forEach((fn) => fn());
@@ -357,7 +357,7 @@ export function BusinessFlow() {
           </h2>
           <p className="m-0 mx-auto mt-5 max-w-[560px] text-[16px] leading-[1.6] text-[#C9D6CD]">
             Four layers run every business. Each of our services maps to the
-            layer it powers — one team, one plan, every surface connected.
+            layer it powers. One team, one plan, every surface connected.
           </p>
         </div>
 

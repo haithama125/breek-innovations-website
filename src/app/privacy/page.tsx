@@ -4,9 +4,9 @@ import { Footer } from "@/components/Footer";
 import { CONTACT_EMAIL } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Breek Innovations",
+  title: "Privacy Policy | Breek Innovations",
   description:
-    "Privacy policy for Breek Innovations LLC — what we collect, how we use it, and your rights.",
+    "Privacy policy for Breek Innovations LLC: what we collect, how we use it, and your rights.",
 };
 
 export default function PrivacyPage() {

@@ -6,7 +6,7 @@ import { BookingModalProvider } from "@/components/BookingModal";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://breek-innovations.com"),
-  title: "Breek Innovations — An investment into your own business",
+  title: "Breek Innovations | An investment into your own business",
   description:
     "Breek Innovations builds websites, apps, social growth, and automation for small and mid-size businesses. One team, one point of contact.",
   icons: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Breek Innovations — An investment into your own business",
+    title: "Breek Innovations | An investment into your own business",
     description:
       "Websites, apps, social growth, and automation for SMBs. Fixed scope, measurable outcomes.",
     url: "https://breek-innovations.com",

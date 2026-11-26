@@ -335,7 +335,7 @@ function SuccessState({ onClose }: { onClose: () => void }) {
         </svg>
       </div>
       <h3 className="mt-4 font-display text-[22px] font-bold tracking-[-0.02em] text-[#13201A]">
-        Thanks — we&apos;ve got it.
+        Thanks, we&apos;ve got it.
       </h3>
       <p className="mx-auto mt-2 max-w-[360px] text-[14.5px] leading-relaxed text-[#4D5A51]">
         You&apos;ll hear from a senior engineer within 24 hours. Check your inbox (and spam) for a note from {CONTACT_EMAIL}.
