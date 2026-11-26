@@ -7,6 +7,7 @@ import { Work } from "@/components/Work";
 import { Testimonials } from "@/components/Testimonials";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Pricing } from "@/components/Pricing";
+import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { RevealObserver } from "@/components/RevealObserver";
@@ -24,6 +25,7 @@ export default function HomePage() {
         <Testimonials />
         <HowItWorks />
         <Pricing />
+        <FAQ />
         <FinalCTA />
       </main>
       <Footer />

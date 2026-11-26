@@ -1,11 +1,6 @@
 "use client";
 
-import { CALENDLY_URL } from "@/lib/config";
 import { useBookingModal } from "./BookingModal";
-
-type CalendlyGlobal = {
-  Calendly?: { initPopupWidget: (opts: { url: string }) => void };
-};
 
 type Props = {
   className?: string;
@@ -33,35 +28,13 @@ export function BookACall({
           ? "border border-white/35 text-[#F0F4EF] hover:border-[#F0F4EF] transition-colors"
           : "pill-primary";
 
-  const classes = `${base} ${variantClass} ${className}`;
-
-  if (booking.isConfigured) {
-    return (
-      <button
-        type="button"
-        onClick={() => booking.open(source)}
-        className={classes}
-      >
-        {children}
-      </button>
-    );
-  }
-
   return (
-    <a
-      href={CALENDLY_URL}
-      target="_blank"
-      rel="noopener"
-      className={classes}
-      onClick={(e) => {
-        const w = window as unknown as CalendlyGlobal;
-        if (w.Calendly) {
-          e.preventDefault();
-          w.Calendly.initPopupWidget({ url: CALENDLY_URL });
-        }
-      }}
+    <button
+      type="button"
+      onClick={() => booking.open(source)}
+      className={`${base} ${variantClass} ${className}`}
     >
       {children}
-    </a>
+    </button>
   );
 }

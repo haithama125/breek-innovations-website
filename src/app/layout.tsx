@@ -1,37 +1,135 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Bricolage_Grotesque, Geist, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { ContactModalProvider } from "@/components/ContactFormModal";
 import { BookingModalProvider } from "@/components/BookingModal";
 
+const geist = Geist({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
+const SITE_URL = "https://breek-innovations.com";
+const SITE_NAME = "Breek Innovations";
+const TITLE =
+  "Breek Innovations | Websites, apps, and AI automation for small businesses";
+const DESCRIPTION =
+  "One team that builds and runs the whole stack for small and mid-size businesses: websites, custom apps, AI automations, and search visibility. Fixed scope, one point of contact.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://breek-innovations.com"),
-  title: "Breek Innovations | An investment into your own business",
-  description:
-    "Breek Innovations builds websites, apps, social growth, and automation for small and mid-size businesses. One team, one point of contact.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: TITLE,
+    template: "%s | Breek Innovations",
+  },
+  description: DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: "Breek Innovations LLC", url: SITE_URL }],
+  creator: "Breek Innovations LLC",
+  publisher: "Breek Innovations LLC",
+  keywords: [
+    "web development for small business",
+    "custom software for medical practices",
+    "restaurant loyalty app",
+    "AI automation for SMBs",
+    "generative engine optimization",
+    "GEO agency",
+    "white label web development",
+    "agency subcontractor",
+  ],
+  alternates: {
+    canonical: SITE_URL,
+  },
   icons: {
     icon: [
-      {
-        url: "/favicon-dark.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/favicon.png",
-        media: "(prefers-color-scheme: dark)",
-      },
+      { url: "/favicon-dark.png", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon.png", media: "(prefers-color-scheme: dark)" },
     ],
   },
   openGraph: {
-    title: "Breek Innovations | An investment into your own business",
-    description:
-      "Websites, apps, social growth, and automation for SMBs. Fixed scope, measurable outcomes.",
-    url: "https://breek-innovations.com",
-    siteName: "Breek Innovations",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
     type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Breek Innovations — websites, apps, and AI automation for small businesses",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
 const META_PIXEL_ID = "1700865632041267";
+
+const ORG_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: SITE_NAME,
+  legalName: "Breek Innovations LLC",
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo-green.png`,
+  email: "hello@breek-innovations.com",
+  description: DESCRIPTION,
+  areaServed: "US",
+  knowsAbout: [
+    "Web development",
+    "Mobile and web application development",
+    "AI workflow automation",
+    "Generative Engine Optimization",
+    "Search engine optimization",
+    "Custom software for small and mid-size businesses",
+  ],
+};
+
+const WEBSITE_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  url: SITE_URL,
+  name: SITE_NAME,
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  inLanguage: "en-US",
+};
 
 export default function RootLayout({
   children,
@@ -39,30 +137,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Geist:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          rel="stylesheet"
-          href="https://assets.calendly.com/assets/external/widget.css"
-        />
-      </head>
+    <html
+      lang="en"
+      className={`${geist.variable} ${bricolage.variable} ${ibmPlexMono.variable}`}
+    >
       <body>
         <BookingModalProvider>
           <ContactModalProvider>{children}</ContactModalProvider>
         </BookingModalProvider>
         <Script
-          src="https://assets.calendly.com/assets/external/widget.js"
-          strategy="afterInteractive"
+          id="ld-organization"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSONLD) }}
+        />
+        <Script
+          id="ld-website"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSONLD) }}
         />
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
