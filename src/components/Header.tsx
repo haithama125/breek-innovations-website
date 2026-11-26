@@ -2,10 +2,11 @@ import Image from "next/image";
 import { BookACall } from "./BookACall";
 
 const navItems = [
-  { href: "#services", label: "Services" },
-  { href: "#why", label: "Why us" },
-  { href: "#work", label: "Work" },
-  { href: "#pricing", label: "Pricing" },
+  { href: "/#services", label: "Services" },
+  { href: "/#why", label: "Why us" },
+  { href: "/#work", label: "Work" },
+  { href: "/#pricing", label: "Pricing" },
+  { href: "/faq/", label: "FAQ" },
 ];
 
 export function Header() {
