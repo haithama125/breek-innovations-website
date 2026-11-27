@@ -24,11 +24,11 @@ type Platform = {
 };
 
 const PLATFORMS: Platform[] = [
-  { id: "ig", angle: -75, distance: 310, label: "Instagram", sub: "Reels + feed", icon: "ig" },
-  { id: "tiktok", angle: -20, distance: 340, label: "TikTok", sub: "Short-form video", icon: "tiktok" },
-  { id: "gbp", angle: 45, distance: 320, label: "Google Business", sub: "Local pack ranking", icon: "gbp" },
-  { id: "yelp", angle: 130, distance: 320, label: "Yelp", sub: "Reviews + replies", icon: "yelp" },
-  { id: "nextdoor", angle: -140, distance: 320, label: "Nextdoor", sub: "Neighborhood reach", icon: "nextdoor" },
+  { id: "ig", angle: -75, distance: 310, label: "Instagram", sub: "Reels and stories", icon: "ig" },
+  { id: "tiktok", angle: -20, distance: 340, label: "TikTok", sub: "Videos people share", icon: "tiktok" },
+  { id: "gbp", angle: 45, distance: 320, label: "Google", sub: "Searches near you", icon: "gbp" },
+  { id: "yelp", angle: 130, distance: 320, label: "Yelp", sub: "Your reviews", icon: "yelp" },
+  { id: "nextdoor", angle: -140, distance: 320, label: "Nextdoor", sub: "Your neighbors", icon: "nextdoor" },
 ];
 
 const NEIGHBORHOODS: Array<{ x: number; y: number; label: string }> = [
@@ -151,25 +151,24 @@ export function DmvReachMap() {
       >
         <defs>
           <radialGradient id="dmv-aura" cx="50%" cy="60%" r="55%">
-            <stop offset="0%" stopColor="#8FE1B0" stopOpacity="0.3" />
-            <stop offset="55%" stopColor="#4FB683" stopOpacity="0.1" />
+            <stop offset="0%" stopColor="#4FB683" stopOpacity="0.14" />
+            <stop offset="55%" stopColor="#1E5235" stopOpacity="0.06" />
             <stop offset="100%" stopColor="#0C2419" stopOpacity="0" />
           </radialGradient>
           <linearGradient id="dmv-node-fill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#B8ECC9" stopOpacity="0.55" />
-            <stop offset="55%" stopColor="#4FA876" stopOpacity="0.38" />
-            <stop offset="100%" stopColor="#1E5235" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#2E6B47" stopOpacity="1" />
+            <stop offset="100%" stopColor="#154A31" stopOpacity="1" />
           </linearGradient>
           <linearGradient id="dmv-center-fill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#CDF2DB" stopOpacity="0.75" />
-            <stop offset="100%" stopColor="#3C8A5E" stopOpacity="0.52" />
+            <stop offset="0%" stopColor="#3C8A5E" stopOpacity="1" />
+            <stop offset="100%" stopColor="#1E5235" stopOpacity="1" />
           </linearGradient>
           <filter id="dmv-node-glow" x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur stdDeviation="9" result="blur" />
+            <feGaussianBlur stdDeviation="8" result="blur" />
             <feColorMatrix
               in="blur"
               type="matrix"
-              values="0 0 0 0 0.56  0 0 0 0 0.88  0 0 0 0 0.68  0 0 0 0.9 0"
+              values="0 0 0 0 0.3  0 0 0 0 0.52  0 0 0 0 0.4  0 0 0 0.35 0"
               result="tint"
             />
             <feMerge>
@@ -179,7 +178,7 @@ export function DmvReachMap() {
           </filter>
         </defs>
 
-        <ellipse cx={CENTER.x} cy={CENTER.y} rx={520} ry={360} fill="url(#dmv-aura)" />
+        <ellipse cx={CENTER.x} cy={CENTER.y} rx={340} ry={260} fill="url(#dmv-aura)" />
 
         {/* Neighborhood labels floating in the background */}
         {NEIGHBORHOODS.map((n) => (
@@ -187,13 +186,12 @@ export function DmvReachMap() {
             key={n.label}
             x={n.x}
             y={n.y}
-            fontFamily="var(--font-mono, 'IBM Plex Mono'), monospace"
-            fontSize={11}
-            letterSpacing="0.18em"
-            fill="rgba(159, 208, 174, 0.55)"
+            fontFamily="var(--font-sans, Inter), sans-serif"
+            fontSize={12}
+            fill="rgba(159, 208, 174, 0.45)"
             textAnchor="middle"
           >
-            {n.label.toUpperCase()}
+            {n.label}
           </text>
         ))}
 
@@ -206,8 +204,8 @@ export function DmvReachMap() {
             cy={CENTER.y}
             r={80}
             fill="none"
-            stroke="rgba(207, 232, 213, 0.55)"
-            strokeWidth={1.6}
+            stroke="rgba(207, 232, 213, 0.35)"
+            strokeWidth={1.3}
           />
         ))}
 
@@ -220,10 +218,10 @@ export function DmvReachMap() {
             height={96}
             rx={16}
             fill="url(#dmv-center-fill)"
-            stroke="rgba(200, 245, 215, 0.55)"
+            stroke="rgba(200, 245, 215, 0.4)"
             strokeWidth={1}
           />
-          <g transform={`translate(${CENTER.x - 85}, ${CENTER.y})`}>
+          <g transform={`translate(${CENTER.x - 70}, ${CENTER.y})`}>
             <g fill="none" stroke="#EEF8F1" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round">
               <path d="M -14 -4 l 4 -10 h 20 l 4 10" />
               <path d="M -14 -4 v 18 h 28 v -18" />
@@ -232,25 +230,28 @@ export function DmvReachMap() {
             </g>
           </g>
           <text
-            x={CENTER.x + 12}
-            y={CENTER.y - 10}
-            fontFamily="var(--font-mono, 'IBM Plex Mono'), monospace"
-            fontSize={10.5}
-            letterSpacing="0.16em"
-            fill="#9FD0AE"
-          >
-            YOUR STOREFRONT
-          </text>
-          <text
-            x={CENTER.x + 12}
-            y={CENTER.y + 14}
+            x={CENTER.x + 24}
+            y={CENTER.y - 8}
+            textAnchor="middle"
+            dominantBaseline="middle"
             fontFamily="var(--font-display, 'Bricolage Grotesque'), sans-serif"
             fontWeight={700}
-            fontSize={18}
+            fontSize={20}
             letterSpacing="-0.02em"
             fill="#F2F8F3"
           >
-            DC · MD · VA
+            Your spot
+          </text>
+          <text
+            x={CENTER.x + 24}
+            y={CENTER.y + 16}
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fontFamily="var(--font-sans, Inter), sans-serif"
+            fontSize={12}
+            fill="rgba(210, 232, 216, 0.8)"
+          >
+            Everyone finds you
           </text>
         </g>
 
@@ -280,17 +281,18 @@ function PlatformTile({ x, y, platform }: { x: number; y: number; platform: Plat
       <rect
         width={W}
         height={H}
-        rx={16}
+        rx={14}
         fill="url(#dmv-node-fill)"
-        stroke="rgba(190, 240, 210, 0.45)"
+        stroke="rgba(170, 220, 190, 0.35)"
         strokeWidth={1}
       />
       <g transform={`translate(26, ${H / 2})`}>
         <PlatformIcon icon={platform.icon} />
       </g>
       <text
-        x={62}
-        y={36}
+        x={58}
+        y={H / 2 - 6}
+        dominantBaseline="middle"
         fontFamily="var(--font-display, 'Bricolage Grotesque'), sans-serif"
         fontWeight={700}
         fontSize={15}
@@ -300,11 +302,12 @@ function PlatformTile({ x, y, platform }: { x: number; y: number; platform: Plat
         {platform.label}
       </text>
       <text
-        x={62}
-        y={55}
+        x={58}
+        y={H / 2 + 13}
+        dominantBaseline="middle"
         fontFamily="var(--font-sans, Inter), sans-serif"
         fontSize={11.5}
-        fill="rgba(210, 232, 216, 0.85)"
+        fill="rgba(200, 225, 208, 0.85)"
       >
         {platform.sub}
       </text>

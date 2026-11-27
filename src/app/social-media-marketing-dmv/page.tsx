@@ -13,9 +13,9 @@ import { ContactTrigger } from "@/components/ContactFormModal";
 
 const SITE_URL = "https://breek-innovations.com";
 const PAGE_URL = `${SITE_URL}/social-media-marketing-dmv/`;
-const TITLE = "Social Media Marketing for DMV Small Businesses";
+const TITLE = "Social Media for DMV Small Businesses";
 const DESCRIPTION =
-  "Commission-based social media marketing for restaurants, salons, gyms, and brick-and-mortar shops in DC, Maryland, and Virginia. We drive foot traffic — you pay when it works.";
+  "We come to your spot, make the videos, post every day, reply to your customers, and run small local ads. You only pay when new people walk in.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -42,44 +42,44 @@ export const metadata: Metadata = {
 };
 
 const STATS = [
-  { stat: "+180%", label: "Instagram growth", who: "First 90 days" },
-  { stat: "42", label: "Walk-ins / mo", who: "From local ads ($600 spend)" },
-  { stat: "4.9★", label: "Google rating lift", who: "Review response cadence" },
-  { stat: "5 mi", label: "Ad targeting radius", who: "Reach, not vanity" },
-  { stat: "60 days", label: "To local-pack move", who: "Average" },
-  { stat: "$0", label: "Monthly retainer", who: "Commission only" },
-  { stat: "DC · MD · VA", label: "On-site content", who: "Where we show up" },
-  { stat: "7", label: "Platforms covered", who: "The ones that convert" },
+  { stat: "More walk-ins", label: "From the first 90 days" },
+  { stat: "No monthly fee", label: "You pay when it works" },
+  { stat: "We come to you", label: "On-site shoot every month" },
+  { stat: "Daily posts", label: "Instagram, TikTok, Facebook" },
+  { stat: "Every DM", label: "Answered in your voice" },
+  { stat: "Every review", label: "Replied to on Google & Yelp" },
+  { stat: "DC · MD · VA", label: "We're local" },
+  { stat: "No contract", label: "Cancel anytime" },
 ];
 
 const FAQS: Array<{ q: string; a: string }> = [
   {
-    q: "What does \"commission\" mean — how do you actually get paid?",
-    a: "Performance-based, not a monthly retainer. On the scoping call we agree on what counts as attributable revenue (new reservations tagged in OpenTable, loyalty-app signups, offer redemptions at the counter, bookings through a tracked link) and we take an agreed percentage of that number. If we don't move the needle, you don't pay. It aligns us with your P&L, not our billable hours.",
+    q: "How does \"pay when it works\" actually work?",
+    a: "On our first call we agree on what counts as a win — new reservations, bookings through a tracked link, redemptions at the counter — and we take a small percentage of that number. If no new customers show up, you don't owe us anything. No monthly retainer, no contract.",
   },
   {
     q: "Do you only work with businesses in the DMV?",
-    a: "We're based in the DMV and that's where we do our best work — we can show up on-site in DC, Arlington, Alexandria, Bethesda, Silver Spring, Fairfax, Loudoun, or anywhere inside the beltway for shoots, launches, and in-person meetings. We take clients outside the region too, but the on-site content production piece is remote-only in that case.",
+    a: "We're based in the DMV and that's where we do our best work. We can show up in person in DC, Arlington, Alexandria, Bethesda, Silver Spring, Fairfax, Loudoun, and around the beltway for shoots and meetings. We take clients outside the region too, but we won't be at your door for the shoot.",
   },
   {
-    q: "We've tried Instagram ads before and it didn't do anything. Why would this be different?",
-    a: "Ads without content that's actually worth watching don't work. The 2026 feed is 70%+ short-form video, and every brick-and-mortar we've scaled did it on original Reels and TikToks shot at the location, not boosted carousels. We shoot content on-site, we post daily, we run small local ad spend against the pieces that are already working organically, and we use Meta's local-awareness targeting so the money hits people inside a 10-mile radius who can actually walk in.",
+    q: "I've tried Instagram ads before and nothing happened. Why would this be different?",
+    a: "Ads only work if the videos are worth watching. Most of what gets watched today is short videos shot at the actual place, not polished ads. We come to your spot, shoot real content, post every day, and only spend ad money on the pieces that are already working. And we point the ads at people who live within a few miles of your door.",
   },
   {
-    q: "What platforms do you cover?",
-    a: "Instagram and TikTok for reach, Facebook for the 40+ local audience that still lives there, Google Business Profile for people searching \"[your category] near me,\" Yelp for the review tail, and Nextdoor for neighborhood-level reach (massively underrated in the DMV). We skip LinkedIn, X, and Threads for brick-and-mortar SMBs unless there's a specific B2B angle.",
+    q: "Where will you post for me?",
+    a: "Instagram, TikTok, Facebook, your Google Business Profile, Yelp, and Nextdoor. These are the platforms that actually bring foot traffic to a local business. We skip the ones that don't (LinkedIn, X, Threads) unless you have a specific reason to be there.",
   },
   {
-    q: "Do you handle DMs, comments, and review responses?",
-    a: "Yes. Inbound DMs on Instagram and Facebook, comments on posts and ads, and Google / Yelp reviews. We respond in your voice during business hours and escalate the ones that need an owner's attention. Review response alone usually moves local-pack ranking within 60 days.",
+    q: "Will you reply to messages and reviews for us?",
+    a: "Yes. We answer DMs, comments, and reviews on Google and Yelp during business hours, in your voice. Anything that needs the owner, we flag. Replying to reviews on Google alone can move you up in \"near me\" search results within a couple months.",
   },
   {
-    q: "How long before we see results?",
-    a: "Reach and follower growth show up in weeks 2 to 4. Foot-traffic and attributable-revenue lift typically shows up in weeks 6 to 10, once the organic content library is deep enough to feed the ad account. Local SEO and review lift (Google Business Profile ranking, star-count on Yelp) is usually 60 to 90 days.",
+    q: "How long until we see results?",
+    a: "You'll see more followers and reach in the first few weeks. Actual new customers walking in usually starts in weeks 6 to 10, once we have a library of content and the ads are tuned. Google ranking and review scores typically improve in 2 to 3 months.",
   },
   {
     q: "What kinds of businesses do you take?",
-    a: "Restaurants, bars, cafes, salons, barbers, gyms and studios, med spas and dental practices, boutiques, specialty retail, and local service businesses with a real storefront. We don't take ecommerce-only brands, Amazon FBA, or drop-shipping — the commission model works because we can tie activity to foot traffic.",
+    a: "Restaurants, bars, cafes, salons, barbers, gyms and studios, med spas, dental practices, boutiques, and local service businesses with a real storefront. We don't take online-only brands — our model only works when we can tie our work to people showing up in person.",
   },
 ];
 
@@ -117,7 +117,7 @@ const BREADCRUMB_JSONLD = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Social media marketing (DMV)", item: PAGE_URL },
+    { "@type": "ListItem", position: 2, name: "Social media (DMV)", item: PAGE_URL },
   ],
 };
 
@@ -127,13 +127,10 @@ export default function SocialMediaMarketingDmvPage() {
       <Header />
       <main>
         {/* 1. Hero */}
-        <section className="mx-auto max-w-[1240px] px-7 pt-14 pb-10 md:pt-24 md:pb-6">
+        <section className="mx-auto max-w-[1240px] px-7 pt-20 pb-10 md:pt-28 md:pb-6">
           <div className="mx-auto max-w-[1000px] text-center">
-            <p className="font-mono text-[12px] uppercase tracking-[0.22em] text-[#2E6B47]">
-              DC · Maryland · Virginia
-            </p>
             <h1
-              className="mt-5 font-display font-bold m-0 text-balance"
+              className="font-display font-bold m-0 text-balance"
               style={{
                 fontSize: "clamp(48px, 7.2vw, 100px)",
                 lineHeight: 0.99,
@@ -147,10 +144,8 @@ export default function SocialMediaMarketingDmvPage() {
               className="mx-auto mt-7 max-w-[680px] text-pretty text-black"
               style={{ fontSize: "clamp(17px, 1.4vw, 20px)", lineHeight: 1.55 }}
             >
-              A local team shooting original content at your storefront,
-              posting daily across Instagram, TikTok, Facebook, and Google
-              Business Profile, and responding in your voice. Commission-based
-              — we earn when you do.
+              We come to your spot, make the videos, post every day, and reply
+              to your customers. You only pay us when new people walk in.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3">
               <BookACall className="text-base px-[30px] py-4" source="social-dmv-hero">
@@ -172,7 +167,7 @@ export default function SocialMediaMarketingDmvPage() {
             className="mx-7 mb-11 text-center font-display font-bold"
             style={{ fontSize: "clamp(28px, 3.6vw, 44px)", letterSpacing: "-0.035em" }}
           >
-            What local owners actually get
+            What you actually get
           </h2>
           <div
             className="overflow-hidden"
@@ -181,24 +176,20 @@ export default function SocialMediaMarketingDmvPage() {
               maskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
             }}
           >
-            <div
-              className="flex w-max gap-4"
-              style={{ animation: "marquee 45s linear infinite" }}
-            >
+            <div className="flex w-max gap-4" style={{ animation: "marquee 45s linear infinite" }}>
               {[...STATS, ...STATS].map((r, i) => (
                 <article
                   key={i}
-                  className="w-[280px] flex-none rounded-[20px] border border-[#DCE3DA] bg-white p-[26px]"
+                  className="w-[270px] flex-none rounded-[20px] border border-[#DCE3DA] bg-white p-[26px]"
                 >
                   <div
-                    className="font-display text-[38px] font-bold leading-none text-[#2E6B47]"
-                    style={{ letterSpacing: "-0.04em" }}
+                    className="font-display text-[26px] font-bold leading-tight text-[#2E6B47]"
+                    style={{ letterSpacing: "-0.03em" }}
                   >
                     {r.stat}
                   </div>
-                  <div className="mt-2.5 text-[15px] font-medium">{r.label}</div>
-                  <div className="mt-[22px] border-t border-[#EDF1EC] pt-4 text-[13px] text-[#6B776F]">
-                    {r.who}
+                  <div className="mt-3 text-[14.5px] text-[#4D5A51]">
+                    {r.label}
                   </div>
                 </article>
               ))}
@@ -228,24 +219,21 @@ export default function SocialMediaMarketingDmvPage() {
           />
           <div className="relative mx-auto max-w-[1240px] px-7 py-24">
             <div className="mb-10 max-w-[720px]">
-              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#9FD0AE]">
-                Reach, mapped
-              </p>
               <h2
-                className="m-0 mt-4 font-display font-bold"
+                className="m-0 font-display font-bold"
                 style={{
                   fontSize: "clamp(34px, 4.2vw, 56px)",
                   lineHeight: 1.02,
                   letterSpacing: "-0.04em",
                 }}
               >
-                Every post ripples across the DMV.
+                Every post reaches people near you.
               </h2>
               <p className="m-0 mt-5 max-w-[560px] text-[16.5px] leading-[1.6] text-[#C9D6CD]">
-                A Reel shot at your counter. A Google Business post that
-                surfaces when someone searches nearby. A Yelp reply that moves
-                you up a slot. Every surface, working the same radius around
-                your door.
+                A video shot at your counter. A Google post that shows up when
+                someone searches nearby. A Yelp reply that moves you up a slot.
+                All the same reach, pointed at the people who can actually
+                walk in.
               </p>
             </div>
             <DmvReachMap />
@@ -276,28 +264,30 @@ export default function SocialMediaMarketingDmvPage() {
           >
             {[
               {
-                label: "01 · WEEK 1",
-                title: "Scoping call",
-                body: "We walk your current numbers (POS, OpenTable, booking tool). We agree on what counts as a new customer and the commission rate.",
+                step: "01",
+                title: "We talk",
+                body: "A 30-minute call to understand your business and agree on what counts as a win — new reservations, bookings, people showing up.",
               },
               {
-                label: "02 · WEEKS 2–4",
-                title: "On-site shoot",
-                body: "Our videographer shows up at your door. One shoot produces 3 to 4 weeks of Reels, TikToks, and photo sets in your brand.",
+                step: "02",
+                title: "We come to your spot",
+                body: "Our videographer shows up for a one-day shoot. That one day gives us 3 to 4 weeks of videos and photos.",
               },
               {
-                label: "03 · WEEKS 2–12",
-                title: "90-day ramp",
-                body: "Daily posting, GBP, review responses, DM handling. Local ads on the pieces that work. Commission capped low during ramp.",
+                step: "03",
+                title: "We post, reply, advertise",
+                body: "Every day we post something new. We reply to every DM and review. Small local ads on the posts people are already loving.",
               },
               {
-                label: "04 · ONGOING",
-                title: "Standard commission",
-                body: "Monthly statement showing attributable revenue and what you owe. Cancel anytime. No retainer, no termination fee.",
+                step: "04",
+                title: "You pay for results",
+                body: "Each month, one simple bill: here's the new business we drove, here's your small cut to us. No new customers? No bill.",
               },
             ].map((s) => (
               <div key={s.title} className="border-t-[3px] border-[#2E6B47] pt-6">
-                <div className="mb-3.5 font-mono text-xs text-[#2E6B47]">{s.label}</div>
+                <div className="mb-3.5 font-display text-[26px] font-bold text-[#2E6B47]" style={{ letterSpacing: "-0.03em" }}>
+                  {s.step}
+                </div>
                 <div className="mb-2.5 font-display text-2xl font-bold" style={{ letterSpacing: "-0.02em" }}>
                   {s.title}
                 </div>
@@ -310,48 +300,39 @@ export default function SocialMediaMarketingDmvPage() {
         {/* 8. Pricing */}
         <section className="bg-white py-20">
           <div className="mx-auto max-w-[1080px] px-7">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#4C8A62]">
-              How pricing works
-            </p>
             <h2
-              className="mt-4 font-display font-bold"
+              className="font-display font-bold"
               style={{
                 fontSize: "clamp(32px, 3.8vw, 48px)",
                 lineHeight: 1.05,
                 letterSpacing: "-0.035em",
               }}
             >
-              You pay when we move the needle.
+              You only pay when we move the needle.
             </h2>
             <div className="mt-10 grid gap-5 md:grid-cols-3">
               {[
                 {
-                  h: "Scoping call",
-                  sub: "Free · 30 min",
-                  w: "Week 1",
-                  p: "We review your current numbers and agree on attribution. If we can't tie activity to revenue, we tell you so.",
+                  h: "First call",
+                  w: "Free, 30 minutes",
+                  p: "We look at your current numbers and agree on what counts as a new customer. If we can't tie our work to results, we'll tell you honestly.",
                 },
                 {
-                  h: "90-day ramp",
-                  sub: "Commission capped low",
-                  w: "Weeks 2 to 12",
-                  p: "We shoot, we post, we build the content library, we tune ads. You don't pay standard commission until the account is warm.",
+                  h: "First 90 days",
+                  w: "Very small cut",
+                  p: "We shoot the content, build your library, start posting and running ads. You pay a tiny cut while things ramp up.",
                 },
                 {
-                  h: "Ongoing",
-                  sub: "Standard commission",
-                  w: "Month 4 onward",
-                  p: "Transparent monthly invoice showing attributable revenue and what you owe. Cancel anytime, no termination fee.",
+                  h: "After that",
+                  w: "Normal cut",
+                  p: "One simple monthly bill showing the new business we drove and your cut. Cancel anytime. No contract.",
                 },
               ].map((tier) => (
                 <div key={tier.h} className="rounded-2xl border border-[#DCE3DA] bg-[#F5F6F0] p-6">
-                  <h3 className="m-0 font-display text-[18px] font-bold tracking-[-0.015em] text-[#13201A]">
+                  <h3 className="m-0 font-display text-[20px] font-bold tracking-[-0.015em] text-[#13201A]">
                     {tier.h}
                   </h3>
-                  <p className="m-0 mt-2 font-mono text-[12px] uppercase tracking-[0.14em] text-[#6B776F]">
-                    {tier.sub}
-                  </p>
-                  <p className="m-0 mt-1 text-[13.5px] text-[#4D5A51]">
+                  <p className="m-0 mt-2 text-[14px] font-medium text-[#4C8A62]">
                     {tier.w}
                   </p>
                   <p className="m-0 mt-4 text-[14.5px] leading-[1.55] text-[#4D5A51]">
@@ -360,8 +341,8 @@ export default function SocialMediaMarketingDmvPage() {
                 </div>
               ))}
             </div>
-            <p className="mt-6 text-[13.5px] text-[#6B776F]">
-              Ad spend is a separate line item billed at cost — no markup.{" "}
+            <p className="mt-6 text-[14px] text-[#4D5A51]">
+              Ad spend (what Instagram or TikTok charge) is separate and billed at cost — no markup.{" "}
               <a href="/#pricing" className="text-[#2E6B47] underline-offset-2 hover:underline">
                 See all pricing
               </a>
@@ -373,18 +354,15 @@ export default function SocialMediaMarketingDmvPage() {
         {/* 9. FAQ */}
         <section className="bg-[#F5F6F0] py-24">
           <div className="mx-auto max-w-[880px] px-7">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#4C8A62]">
-              Questions
-            </p>
             <h2
-              className="mt-4 max-w-[640px] font-display font-bold"
+              className="max-w-[640px] font-display font-bold"
               style={{
                 fontSize: "clamp(28px, 3.6vw, 42px)",
                 lineHeight: 1.08,
                 letterSpacing: "-0.035em",
               }}
             >
-              What local owners ask us most.
+              Questions local owners ask us.
             </h2>
             <div className="mt-10 divide-y divide-[#DCE3DA] border-y border-[#DCE3DA]">
               {FAQS.map((item, i) => (

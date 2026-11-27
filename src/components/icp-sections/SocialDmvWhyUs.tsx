@@ -4,30 +4,25 @@ import { useEffect, useRef, useState } from "react";
 
 type Tab = {
   label: string;
-  tag: string;
   desc: string;
 };
 
 const TABS: Tab[] = [
   {
-    label: "On-site content, monthly",
-    tag: "ORIGINAL VIDEO",
-    desc: "A videographer at your location monthly, capturing Reels and TikToks that look like a local person made them. Original content is what the algorithm actually rewards in 2026.",
+    label: "We come to you and shoot the videos",
+    desc: "Once a month a videographer shows up at your spot and films. The videos look like you, your staff, your food — not a stock template. That's what people actually watch and share.",
   },
   {
-    label: "Local ad spend",
-    tag: "TARGETED REACH",
-    desc: "Meta and TikTok ads inside a 5 to 10 mile radius around your door. Ad budget that hits people who can actually walk in, not vanity impressions in another state.",
+    label: "Ads that only reach people nearby",
+    desc: "We put a small amount of ad spend behind the posts that are already working, and we point it at people who live or work within a few miles of you. No wasted dollars on someone in another state.",
   },
   {
-    label: "Reviews + Google Business",
-    tag: "LOCAL RANKING",
-    desc: "Daily Google Business Profile posts and timely review responses. This is the single biggest lever for \"near me\" ranking in the local pack, and almost no one is doing it right.",
+    label: "We reply to every message and review",
+    desc: "Every Instagram DM, every Google review, every Yelp comment — answered in your voice during business hours. This alone can move you up in \"near me\" search results.",
   },
   {
-    label: "Pay when it works",
-    tag: "COMMISSION MODEL",
-    desc: "No monthly retainer. We take a cut of attributable new revenue. Aligned with your P&L, not our billable hours. If the campaign doesn't move the needle, you don't pay.",
+    label: "You only pay when it works",
+    desc: "No monthly retainer. We take a small cut of the new business we actually bring in. If nothing changes, you don't owe us anything.",
   },
 ];
 
@@ -59,14 +54,11 @@ export function SocialDmvWhyUs() {
         style={{ gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))" }}
       >
         <div>
-          <div className="mb-[18px] font-mono text-[13px] text-[#2E6B47]" style={{ letterSpacing: "0.06em" }}>
-            WHY LOCAL OWNERS PICK US
-          </div>
           <h2
             className="mb-9 text-balance font-display font-bold"
             style={{ fontSize: "clamp(34px, 4.2vw, 56px)", lineHeight: 1.02, letterSpacing: "-0.04em" }}
           >
-            Foot traffic, not followers.
+            More walk-ins. Not more followers.
           </h2>
           {TABS.map((t, i) => {
             const active = i === tab;
@@ -78,12 +70,9 @@ export function SocialDmvWhyUs() {
                 className="w-full cursor-pointer border-t border-[#DCE3DA] pt-[22px] text-left transition-opacity duration-300"
                 style={{ opacity: active ? 1 : 0.38 }}
               >
-                <div className="flex items-baseline justify-between gap-4">
-                  <span className="font-display text-[26px] font-bold" style={{ letterSpacing: "-0.03em" }}>
-                    {t.label}
-                  </span>
-                  <span className="font-mono text-[12px] text-[#2E6B47]">{t.tag}</span>
-                </div>
+                <span className="block font-display text-[26px] font-bold" style={{ letterSpacing: "-0.03em" }}>
+                  {t.label}
+                </span>
                 {active ? (
                   <p
                     className="m-0 mt-2.5 max-w-[460px] text-[16px] leading-[1.55] text-[#4D5A51]"
@@ -118,7 +107,7 @@ export function SocialDmvWhyUs() {
           {tab === 0 && <PanelReel key="reel" />}
           {tab === 1 && <PanelLocalAds key="ads" />}
           {tab === 2 && <PanelReviews key="reviews" />}
-          {tab === 3 && <PanelCommission key="commission" />}
+          {tab === 3 && <PanelPay key="pay" />}
         </div>
       </div>
     </section>
@@ -138,11 +127,9 @@ function PanelReel() {
       <div
         className="relative aspect-[9/16] overflow-hidden rounded-[22px]"
         style={{
-          background:
-            "linear-gradient(180deg, #1a402c 0%, #2E6B47 55%, #4C8A62 100%)",
+          background: "linear-gradient(180deg, #1a402c 0%, #2E6B47 55%, #4C8A62 100%)",
         }}
       >
-        {/* Faux "camera on the counter" framing */}
         <div
           className="absolute inset-x-6 top-10 h-28 rounded-xl bg-[#F5EFD9]/90"
           style={{ animation: "fadeUp 0.5s ease 0.15s both" }}
@@ -155,9 +142,9 @@ function PanelReel() {
           className="absolute bottom-6 left-3 right-3 rounded-xl bg-black/35 px-3 py-2 backdrop-blur-sm"
           style={{ animation: "fadeUp 0.5s ease 0.45s both" }}
         >
-          <div className="text-[11px] font-mono text-white/80">@yourcafe · 2h</div>
+          <div className="text-[11px] text-white/80">@yourspot · 2h</div>
           <div className="mt-1 text-[12.5px] font-semibold text-white">
-            New seasonal pastry, shot this morning
+            Fresh pastry, shot this morning
           </div>
         </div>
       </div>
@@ -196,8 +183,8 @@ function PanelLocalAds() {
                 <circle cx="10" cy="8" r="2.4" fill="#2E6B47" />
               </svg>
             </span>
-            <span className="rounded-full bg-white px-3 py-1 font-mono text-[10.5px] uppercase tracking-[0.1em] text-[#13201A]">
-              5 mi radius
+            <span className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold text-[#13201A]">
+              Near you
             </span>
           </div>
         </div>
@@ -206,11 +193,8 @@ function PanelLocalAds() {
         className="rounded-xl bg-white px-4 py-3 text-center text-[13px]"
         style={{ boxShadow: "0 16px 40px rgba(0,0,0,0.25)", animation: "fadeUp 0.5s ease 0.3s both" }}
       >
-        <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#2E6B47]">
-          Spending where it counts
-        </div>
-        <div className="mt-0.5 font-display text-[18px] font-bold text-[#13201A]">
-          $600 / mo → 42 walk-ins
+        <div className="font-display text-[16px] font-bold text-[#13201A]">
+          A little ad spend. Lots of walk-ins.
         </div>
       </div>
     </div>
@@ -219,8 +203,8 @@ function PanelLocalAds() {
 
 function PanelReviews() {
   const reviews = [
-    { name: "Jordan P.", stars: 5, text: "Best latte in the neighborhood. Owner replied to my last review in 2 hours.", d: "0.1s" },
-    { name: "A. Martinez", stars: 5, text: "Found them on Google — the Reels made me come try it.", d: "0.25s" },
+    { name: "Jordan P.", stars: 5, text: "Best latte in the neighborhood. Owner replied to my review in 2 hours.", d: "0.1s" },
+    { name: "A. Martinez", stars: 5, text: "Saw them on Instagram and had to try it. Worth the drive.", d: "0.25s" },
     { name: "Kelly R.", stars: 4, text: "Love it. Had one small issue, they followed up same day.", d: "0.4s" },
   ];
   return (
@@ -229,14 +213,14 @@ function PanelReviews() {
       style={{ boxShadow: "0 24px 60px rgba(0,0,0,0.3)", ...anim() }}
     >
       <div className="mb-3 flex items-baseline justify-between">
-        <div className="text-[13px] font-semibold text-[#13201A]">Reviews · this month</div>
-        <div className="flex items-center gap-1 font-mono text-[11px] text-[#2E6B47]">
-          <span>4.9</span>
+        <div className="text-[13px] font-semibold text-[#13201A]">Your reviews this month</div>
+        <div className="flex items-center gap-1 text-[12px] text-[#13201A]">
+          <span className="font-bold">4.9</span>
           <span className="text-[#F5B841]">★★★★★</span>
         </div>
       </div>
-      <div className="mb-3 text-[11.5px] text-[#6B776F]">
-        Google Business Profile · 127 reviews, 100% replied
+      <div className="mb-3 text-[12px] text-[#6B776F]">
+        127 reviews · every one of them replied to
       </div>
       {reviews.map((r) => (
         <div
@@ -255,20 +239,20 @@ function PanelReviews() {
   );
 }
 
-function PanelCommission() {
+function PanelPay() {
   const rows = [
-    { label: "Attributable new revenue", val: "$12,840", d: "0.1s" },
-    { label: "Commission rate", val: "× 8%", d: "0.22s" },
-    { label: "You owe Breek this month", val: "$1,027", d: "0.34s", highlight: true },
+    { label: "New customers this month", val: "+ 68", d: "0.1s" },
+    { label: "Extra sales they brought in", val: "$12,840", d: "0.22s" },
+    { label: "What you owe Breek", val: "$1,027", d: "0.34s", highlight: true },
   ];
   return (
     <div
       className="w-full max-w-[380px] rounded-[20px] bg-white p-5"
       style={{ boxShadow: "0 24px 60px rgba(0,0,0,0.3)", ...anim() }}
     >
-      <div className="mb-1 text-[13px] font-semibold text-[#13201A]">Monthly statement</div>
-      <div className="mb-3 text-[11.5px] text-[#6B776F]">
-        No retainer · transparent · cancel anytime
+      <div className="mb-1 text-[13px] font-semibold text-[#13201A]">Your monthly bill</div>
+      <div className="mb-3 text-[12px] text-[#6B776F]">
+        No contract · no retainer · cancel anytime
       </div>
       {rows.map((r) => (
         <div
@@ -278,9 +262,7 @@ function PanelCommission() {
           }`}
           style={{ animation: `fadeUp 0.4s ease ${r.d} both` }}
         >
-          <span className={r.highlight ? "font-semibold" : "font-medium"}>
-            {r.label}
-          </span>
+          <span className={r.highlight ? "font-semibold" : "font-medium"}>{r.label}</span>
           <span
             className={`font-display font-bold ${r.highlight ? "text-[18px]" : "text-[16px]"}`}
             style={{ letterSpacing: "-0.015em" }}
@@ -289,8 +271,8 @@ function PanelCommission() {
           </span>
         </div>
       ))}
-      <div className="mt-3 text-[11.5px] text-[#6B776F]">
-        Didn&apos;t generate revenue? You owe $0.
+      <div className="mt-3 text-[12px] text-[#6B776F]">
+        No new customers? You owe $0.
       </div>
     </div>
   );
