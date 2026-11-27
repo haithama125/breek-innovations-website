@@ -13,22 +13,22 @@ import { ContactTrigger } from "@/components/ContactFormModal";
 
 const SITE_URL = "https://breek-innovations.com";
 const PAGE_URL = `${SITE_URL}/mobile-app-development/`;
-const TITLE = "Freelance Mobile App Development";
+const TITLE = "Custom Mobile Apps for Your Business";
 const DESCRIPTION =
-  "Hire a senior team for your iOS or Android app. Fixed scope, fixed price, shipped in 6 to 10 weeks. React Native, native Swift, native Kotlin, and full backend.";
+  "We design, build, and launch your iPhone and Android app in 6 to 10 weeks for a fixed price. One team handles everything so you don't have to.";
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords: [
-    "freelance mobile app development",
+    "mobile app developer",
     "hire mobile app developer",
-    "custom mobile app development",
-    "iOS app developer",
+    "custom mobile app",
+    "iPhone app developer",
     "Android app developer",
-    "React Native developer",
-    "mobile app development agency alternative",
-    "white label mobile app development",
+    "small business app",
+    "freelance mobile app development",
+    "app development for small business",
   ],
   alternates: { canonical: PAGE_URL },
   openGraph: {
@@ -40,51 +40,51 @@ export const metadata: Metadata = {
 };
 
 const STATS = [
-  { stat: "6 wk", label: "MVP ship time", who: "Design to App Store" },
-  { stat: "~40%", label: "Cost reduction", who: "Vs. two native builds" },
-  { stat: "iOS + Android", label: "Both stores", who: "One build pipeline" },
-  { stat: "100%", label: "Code ownership", who: "Your GitHub repo" },
-  { stat: "30 days", label: "Free fixes post-launch", who: "Baked in" },
-  { stat: "$0", label: "License fees", who: "No lock-in ever" },
-  { stat: "<24h", label: "Quote turnaround", who: "After scoping call" },
-  { stat: "4.8★", label: "Average store rating", who: "Latest launched builds" },
+  { stat: "6–10 wks", label: "From idea to app store" },
+  { stat: "iPhone + Android", label: "Both, launched together" },
+  { stat: "Fixed price", label: "Quoted before we start" },
+  { stat: "100%", label: "You own the app" },
+  { stat: "30 days", label: "Free fixes after launch" },
+  { stat: "$0", label: "Hidden fees, ever" },
+  { stat: "<24h", label: "Quote after our first call" },
+  { stat: "One team", label: "Start to finish" },
 ];
 
 const FAQS: Array<{ q: string; a: string }> = [
   {
-    q: "Native (Swift/Kotlin) or React Native?",
-    a: "Default is React Native with Expo. One codebase ships to both App Store and Play Store, which cuts cost and timeline by roughly 40 percent without sacrificing performance for the vast majority of apps. We go native (Swift/SwiftUI, Kotlin) when the app needs deep OS integration, heavy custom animation, or specific hardware APIs. We decide together in the first call.",
-  },
-  {
     q: "What does it cost and how long does it take?",
-    a: "A typical MVP ships in 6 to 10 weeks starting from the Custom Mobile Apps tier on our pricing page. A thin v1 (3 to 5 core screens, auth, one integration) is on the lower end. A production app with payments, real-time, offline support, and a backend is on the higher end. You get a fixed-price quote before any code is written.",
+    a: "Most apps ship in 6 to 10 weeks and are quoted as a fixed price before we start. A simple first version is on the shorter end. A full product with payments, logins, and lots of features is on the longer end. We give you an exact number after a 30-minute call, so you're never guessing.",
   },
   {
-    q: "Do you handle the backend too?",
-    a: "Yes. We build the mobile app, the API, the database, auth, payments, and the admin dashboard. Default stack is Supabase or Firebase for speed, with a custom Node or Python backend when the app needs it. You end up with one team, one invoice, and one point of contact.",
+    q: "What's included — just the app, or everything?",
+    a: "Everything. The app your customers download, the dashboard you use to manage it, where all your data lives, the payment flow, and the launch on both app stores. You get one team, one invoice, and one point of contact for the whole thing.",
   },
   {
-    q: "Who owns the code?",
-    a: "You do. Source goes into a GitHub repo you own from day one. We never retain IP, you never pay a license fee, and nothing we build locks you into us. If you ever want to hand it off to an in-house team, it comes with a readme and an onboarding call.",
+    q: "Do I own the app when you're done?",
+    a: "Yes, completely. The app is in your name, the Apple and Google accounts are in your name, and we don't charge any ongoing fee to own it. If you ever want to work with someone else later, you can walk away with everything.",
   },
   {
-    q: "Do you submit to the App Store and Play Store?",
-    a: "Yes. We handle provisioning, certificates, App Store Connect setup, Play Console setup, screenshots, review submission, and the back-and-forth with Apple's review team. Your developer accounts stay in your name — we're just an admin on them.",
+    q: "Do you launch it on the App Store and Google Play?",
+    a: "Yes. We set up the store listings, write the descriptions, submit for review, and handle all the back-and-forth with Apple and Google. You don't ever talk to a reviewer or deal with a certificate. Your app shows up on both stores when it's ready.",
   },
   {
-    q: "What happens after launch?",
-    a: "Every build includes 30 days of post-launch fixes at no cost. After that, you can keep us on a lightweight monthly retainer for new features, OS updates (iOS and Android both have breaking releases yearly), and store resubmissions, or pay hourly when something comes up.",
+    q: "What happens if something breaks after launch?",
+    a: "You get 30 days of free fixes after launch, no questions asked. After that, if you want us to keep adding features, we offer a simple monthly plan. If you don't need anything, we don't charge anything.",
+  },
+  {
+    q: "What kinds of businesses hire you?",
+    a: "Restaurants wanting loyalty apps, local service businesses wanting a booking or dispatch app, med spas and dental practices wanting a patient-facing app, and founders with an idea they want in the app stores. If you're not sure your idea fits, book a 30-minute call — we'll tell you honestly.",
   },
 ];
 
 const PAGE_JSONLD = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Freelance mobile app development",
+  name: "Custom mobile app development for small businesses",
   description: DESCRIPTION,
   provider: { "@type": "Organization", name: "Breek Innovations", url: SITE_URL },
   areaServed: "Worldwide",
-  serviceType: "iOS and Android mobile application development",
+  serviceType: "Mobile app design and development",
   url: PAGE_URL,
 };
 
@@ -103,7 +103,7 @@ const BREADCRUMB_JSONLD = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Mobile app development", item: PAGE_URL },
+    { "@type": "ListItem", position: 2, name: "Mobile apps", item: PAGE_URL },
   ],
 };
 
@@ -113,29 +113,26 @@ export default function MobileAppDevelopmentPage() {
       <Header />
       <main>
         {/* 1. Hero */}
-        <section className="mx-auto max-w-[1240px] px-7 pt-14 pb-10 md:pt-24 md:pb-6">
+        <section className="mx-auto max-w-[1240px] px-7 pt-20 pb-10 md:pt-28 md:pb-6">
           <div className="mx-auto max-w-[1000px] text-center">
-            <p className="font-mono text-[12px] uppercase tracking-[0.22em] text-[#2E6B47]">
-              Freelance mobile app development
-            </p>
             <h1
-              className="mt-5 font-display font-bold m-0 text-balance"
+              className="font-display font-bold m-0 text-balance"
               style={{
                 fontSize: "clamp(48px, 7.2vw, 100px)",
                 lineHeight: 0.99,
                 letterSpacing: "-0.045em",
               }}
             >
-              Ship your mobile app without the{" "}
-              <span style={{ color: "#2E6B47" }}>agency markup.</span>
+              Your app, built by{" "}
+              <span style={{ color: "#2E6B47" }}>people who actually answer.</span>
             </h1>
             <p
               className="mx-auto mt-7 max-w-[680px] text-pretty text-black"
               style={{ fontSize: "clamp(17px, 1.4vw, 20px)", lineHeight: 1.55 }}
             >
-              A senior team taking your idea from Figma to App Store in 6 to 10
-              weeks. Fixed scope, fixed price, source in a repo you own on day
-              one.
+              We design, build, and launch your iPhone and Android app in 6 to
+              10 weeks, for a price you know before we start. One team, start
+              to finish.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3">
               <BookACall className="text-base px-[30px] py-4" source="mobile-app-hero">
@@ -157,7 +154,7 @@ export default function MobileAppDevelopmentPage() {
             className="mx-7 mb-11 text-center font-display font-bold"
             style={{ fontSize: "clamp(28px, 3.6vw, 44px)", letterSpacing: "-0.035em" }}
           >
-            What you get when we build your app
+            What you can count on
           </h2>
           <div
             className="overflow-hidden"
@@ -173,17 +170,16 @@ export default function MobileAppDevelopmentPage() {
               {[...STATS, ...STATS].map((r, i) => (
                 <article
                   key={i}
-                  className="w-[270px] flex-none rounded-[20px] border border-[#DCE3DA] bg-white p-[26px]"
+                  className="w-[260px] flex-none rounded-[20px] border border-[#DCE3DA] bg-white p-[26px]"
                 >
                   <div
-                    className="font-display text-[38px] font-bold leading-none text-[#2E6B47]"
+                    className="font-display text-[34px] font-bold leading-none text-[#2E6B47]"
                     style={{ letterSpacing: "-0.04em" }}
                   >
                     {r.stat}
                   </div>
-                  <div className="mt-2.5 text-[15px] font-medium">{r.label}</div>
-                  <div className="mt-[22px] border-t border-[#EDF1EC] pt-4 text-[13px] text-[#6B776F]">
-                    {r.who}
+                  <div className="mt-3 text-[15px] font-medium text-[#13201A]">
+                    {r.label}
                   </div>
                 </article>
               ))}
@@ -213,23 +209,20 @@ export default function MobileAppDevelopmentPage() {
           />
           <div className="relative mx-auto max-w-[1240px] px-7 py-24">
             <div className="mb-10 max-w-[720px]">
-              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#9FD0AE]">
-                One codebase, four outputs
-              </p>
               <h2
-                className="m-0 mt-4 font-display font-bold"
+                className="m-0 font-display font-bold"
                 style={{
                   fontSize: "clamp(34px, 4.2vw, 56px)",
                   lineHeight: 1.02,
                   letterSpacing: "-0.04em",
                 }}
               >
-                Every build ships the whole stack.
+                One app. Everywhere it needs to be.
               </h2>
               <p className="m-0 mt-5 max-w-[560px] text-[16.5px] leading-[1.6] text-[#C9D6CD]">
-                One repo. One build command. iOS and Android launch together,
-                the backend and admin console land in the same release, and
-                every new feature ships to all four at once.
+                Your app on iPhone. Your app on Android. The dashboard you use
+                to run it. The system that saves every order and account. All
+                connected, all launched together, all included in one price.
               </p>
             </div>
             <PlatformFan />
@@ -252,7 +245,7 @@ export default function MobileAppDevelopmentPage() {
               letterSpacing: "-0.04em",
             }}
           >
-            How we ship your app
+            How we build your app
           </h2>
           <div
             className="grid gap-5"
@@ -260,28 +253,30 @@ export default function MobileAppDevelopmentPage() {
           >
             {[
               {
-                label: "01 · 30 MIN",
-                title: "Scoping call",
-                body: "You describe the app, we ask the ten questions that determine real scope, and you get a fixed quote in 24 hours.",
+                step: "01",
+                title: "We talk, then we quote",
+                body: "A 30-minute call to understand your idea and your business. You get a fixed price and a timeline in writing within 24 hours.",
               },
               {
-                label: "02 · WEEK 1",
-                title: "Design + architecture",
-                body: "If you have Figma, we validate against platform patterns. If not, we design in a week. Backend schema and API contract signed before any code.",
+                step: "02",
+                title: "We show you the design",
+                body: "In week one you see exactly what the app will look like, screen by screen. You give notes until it's right. Nothing is a surprise later.",
               },
               {
-                label: "03 · WEEKS 2–8",
-                title: "Build sprints",
-                body: "TestFlight / Play Internal build every Friday. In-app Shake-to-report feedback. No status meetings unless you want them.",
+                step: "03",
+                title: "We build it",
+                body: "Every Friday you get a working version on your phone to try. You send feedback, we fix it, we keep shipping.",
               },
               {
-                label: "04 · LAUNCH",
-                title: "Submit + 30 days",
-                body: "We submit to both stores, handle review feedback, and fix any issue in the first 30 days at no cost. Then: done, or retainer.",
+                step: "04",
+                title: "We launch and look after it",
+                body: "We put it on the App Store and Google Play. For the first 30 days, anything that needs fixing is on us.",
               },
             ].map((s) => (
               <div key={s.title} className="border-t-[3px] border-[#2E6B47] pt-6">
-                <div className="mb-3.5 font-mono text-xs text-[#2E6B47]">{s.label}</div>
+                <div className="mb-3.5 font-display text-[26px] font-bold text-[#2E6B47]" style={{ letterSpacing: "-0.03em" }}>
+                  {s.step}
+                </div>
                 <div className="mb-2.5 font-display text-2xl font-bold" style={{ letterSpacing: "-0.02em" }}>
                   {s.title}
                 </div>
@@ -294,49 +289,40 @@ export default function MobileAppDevelopmentPage() {
         {/* 8. Pricing */}
         <section className="bg-white py-20">
           <div className="mx-auto max-w-[1080px] px-7">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#4C8A62]">
-              Pricing & timeline
-            </p>
             <h2
-              className="mt-4 font-display font-bold"
+              className="font-display font-bold"
               style={{
                 fontSize: "clamp(32px, 3.8vw, 48px)",
                 lineHeight: 1.05,
                 letterSpacing: "-0.035em",
               }}
             >
-              Fixed scope. Fixed price. Fixed end date.
+              Fixed price. Fixed timeline. No surprises.
             </h2>
             <div className="mt-10 grid gap-5 md:grid-cols-3">
               {[
                 {
-                  h: "Thin v1",
-                  sub: "From our Custom Mobile Apps tier",
+                  h: "Simple app",
                   w: "4 to 6 weeks",
-                  p: "3 to 5 core screens, auth, one key integration, shipped to both stores. Proof-of-concept scope.",
+                  p: "A focused app with a few main screens, user accounts, and one key feature. Great for proving out an idea.",
                 },
                 {
-                  h: "Production MVP",
-                  sub: "Most common",
+                  h: "Full app",
                   w: "6 to 10 weeks",
-                  p: "App + backend + admin dashboard + payments. The version you take to market.",
+                  p: "The complete package: app, dashboard, payments, accounts. The version you take to market.",
                 },
                 {
-                  h: "Full product",
-                  sub: "App + backend + growth",
+                  h: "Big product",
                   w: "10 to 16 weeks",
-                  p: "MVP plus real-time, offline sync, deep integrations, and in-store analytics. Investor-ready.",
+                  p: "Everything above, plus deep features: offline mode, integrations with other systems, custom workflows.",
                 },
               ].map((tier) => (
                 <div key={tier.h} className="rounded-2xl border border-[#DCE3DA] bg-[#F5F6F0] p-6">
-                  <h3 className="m-0 font-display text-[18px] font-bold tracking-[-0.015em] text-[#13201A]">
+                  <h3 className="m-0 font-display text-[20px] font-bold tracking-[-0.015em] text-[#13201A]">
                     {tier.h}
                   </h3>
-                  <p className="m-0 mt-2 font-mono text-[12px] uppercase tracking-[0.14em] text-[#6B776F]">
-                    {tier.sub}
-                  </p>
-                  <p className="m-0 mt-1 text-[13.5px] text-[#4D5A51]">
-                    Timeline: {tier.w}
+                  <p className="m-0 mt-2 text-[14px] font-medium text-[#4C8A62]">
+                    {tier.w}
                   </p>
                   <p className="m-0 mt-4 text-[14.5px] leading-[1.55] text-[#4D5A51]">
                     {tier.p}
@@ -344,8 +330,8 @@ export default function MobileAppDevelopmentPage() {
                 </div>
               ))}
             </div>
-            <p className="mt-6 text-[13.5px] text-[#6B776F]">
-              Every build includes 30 days of post-launch fixes at no cost.{" "}
+            <p className="mt-6 text-[14px] text-[#4D5A51]">
+              Every build includes 30 days of free fixes after launch.{" "}
               <a href="/#pricing" className="text-[#2E6B47] underline-offset-2 hover:underline">
                 See all pricing
               </a>
@@ -357,18 +343,15 @@ export default function MobileAppDevelopmentPage() {
         {/* 9. FAQ */}
         <section className="bg-[#F5F6F0] py-24">
           <div className="mx-auto max-w-[880px] px-7">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#4C8A62]">
-              Questions
-            </p>
             <h2
-              className="mt-4 max-w-[640px] font-display font-bold"
+              className="max-w-[640px] font-display font-bold"
               style={{
                 fontSize: "clamp(28px, 3.6vw, 42px)",
                 lineHeight: 1.08,
                 letterSpacing: "-0.035em",
               }}
             >
-              What people ask before hiring us for a mobile build.
+              Questions people ask before hiring us.
             </h2>
             <div className="mt-10 divide-y divide-[#DCE3DA] border-y border-[#DCE3DA]">
               {FAQS.map((item, i) => (

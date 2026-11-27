@@ -22,10 +22,10 @@ type NodeDef = {
 };
 
 const NODES: NodeDef[] = [
-  { id: "ios", angle: -60, distance: 320, title: "iOS app", sub: "App Store", icon: "ios" },
-  { id: "android", angle: 60, distance: 320, title: "Android app", sub: "Google Play", icon: "android" },
-  { id: "backend", angle: 125, distance: 300, title: "Backend & API", sub: "Supabase · Node", icon: "backend" },
-  { id: "admin", angle: -125, distance: 300, title: "Admin dashboard", sub: "Web console", icon: "admin" },
+  { id: "ios", angle: -60, distance: 320, title: "iPhone app", sub: "On the App Store", icon: "ios" },
+  { id: "android", angle: 60, distance: 320, title: "Android app", sub: "On Google Play", icon: "android" },
+  { id: "backend", angle: 125, distance: 300, title: "Your database", sub: "Accounts, orders, data", icon: "backend" },
+  { id: "admin", angle: -125, distance: 300, title: "Your dashboard", sub: "Run the app yourself", icon: "admin" },
 ];
 
 function polar(angleDeg: number, radius: number) {
@@ -145,18 +145,17 @@ export function PlatformFan() {
       >
         <defs>
           <radialGradient id="pf-aura" cx="50%" cy="60%" r="55%">
-            <stop offset="0%" stopColor="#8FE1B0" stopOpacity="0.32" />
-            <stop offset="55%" stopColor="#4FB683" stopOpacity="0.1" />
+            <stop offset="0%" stopColor="#4FB683" stopOpacity="0.14" />
+            <stop offset="55%" stopColor="#1E5235" stopOpacity="0.06" />
             <stop offset="100%" stopColor="#0C2419" stopOpacity="0" />
           </radialGradient>
           <linearGradient id="pf-node-fill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#B8ECC9" stopOpacity="0.55" />
-            <stop offset="55%" stopColor="#4FA876" stopOpacity="0.38" />
-            <stop offset="100%" stopColor="#1E5235" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#2E6B47" stopOpacity="1" />
+            <stop offset="100%" stopColor="#154A31" stopOpacity="1" />
           </linearGradient>
           <linearGradient id="pf-center-fill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#CDF2DB" stopOpacity="0.75" />
-            <stop offset="100%" stopColor="#3C8A5E" stopOpacity="0.52" />
+            <stop offset="0%" stopColor="#3C8A5E" stopOpacity="1" />
+            <stop offset="100%" stopColor="#1E5235" stopOpacity="1" />
           </linearGradient>
           <filter id="pf-glow" x="-100%" y="-100%" width="300%" height="300%">
             <feGaussianBlur stdDeviation="4" result="b1" />
@@ -168,11 +167,11 @@ export function PlatformFan() {
             </feMerge>
           </filter>
           <filter id="pf-node-glow" x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur stdDeviation="9" result="blur" />
+            <feGaussianBlur stdDeviation="8" result="blur" />
             <feColorMatrix
               in="blur"
               type="matrix"
-              values="0 0 0 0 0.56  0 0 0 0 0.88  0 0 0 0 0.68  0 0 0 0.9 0"
+              values="0 0 0 0 0.3  0 0 0 0 0.52  0 0 0 0 0.4  0 0 0 0.35 0"
               result="tint"
             />
             <feMerge>
@@ -182,7 +181,7 @@ export function PlatformFan() {
           </filter>
         </defs>
 
-        <ellipse cx={CENTER.x} cy={CENTER.y} rx={430} ry={330} fill="url(#pf-aura)" />
+        <ellipse cx={CENTER.x} cy={CENTER.y} rx={340} ry={260} fill="url(#pf-aura)" />
 
         {/* Fan ribs (lines from center to each node) */}
         {NODES.map((n) => {
@@ -194,8 +193,8 @@ export function PlatformFan() {
               y1={CENTER.y}
               x2={end.x}
               y2={end.y}
-              stroke="rgba(207, 232, 213, 0.32)"
-              strokeWidth={1.3}
+              stroke="rgba(207, 232, 213, 0.18)"
+              strokeWidth={1.1}
               strokeLinecap="round"
               strokeDasharray="2 7"
             />
@@ -216,36 +215,27 @@ export function PlatformFan() {
           />
           <text
             x={CENTER.x}
-            y={CENTER.y - 18}
+            y={CENTER.y - 8}
             textAnchor="middle"
-            fontFamily="var(--font-mono, 'IBM Plex Mono'), monospace"
-            fontSize={11}
-            letterSpacing="0.18em"
-            fill="#9FD0AE"
-          >
-            SHARED CODEBASE
-          </text>
-          <text
-            x={CENTER.x}
-            y={CENTER.y + 8}
-            textAnchor="middle"
+            dominantBaseline="middle"
             fontFamily="var(--font-display, 'Bricolage Grotesque'), sans-serif"
             fontWeight={700}
             fontSize={22}
             letterSpacing="-0.02em"
             fill="#F2F8F3"
           >
-            React Native · TypeScript
+            Your app
           </text>
           <text
             x={CENTER.x}
-            y={CENTER.y + 32}
+            y={CENTER.y + 18}
             textAnchor="middle"
+            dominantBaseline="middle"
             fontFamily="var(--font-sans, Inter), sans-serif"
-            fontSize={12}
-            fill="rgba(210, 232, 216, 0.75)"
+            fontSize={12.5}
+            fill="rgba(210, 232, 216, 0.8)"
           >
-            One repo, one build, four outputs
+            Built once, everything stays in sync
           </text>
         </g>
 
@@ -283,17 +273,18 @@ function NodeTile({ x, y, node }: { x: number; y: number; node: NodeDef }) {
       <rect
         width={W}
         height={H}
-        rx={16}
+        rx={14}
         fill="url(#pf-node-fill)"
-        stroke="rgba(190, 240, 210, 0.45)"
+        stroke="rgba(170, 220, 190, 0.35)"
         strokeWidth={1}
       />
       <g transform={`translate(28, ${H / 2})`}>
         <NodeIcon icon={node.icon} />
       </g>
       <text
-        x={66}
-        y={38}
+        x={60}
+        y={H / 2 - 6}
+        dominantBaseline="middle"
         fontFamily="var(--font-display, 'Bricolage Grotesque'), sans-serif"
         fontWeight={700}
         fontSize={15.5}
@@ -303,11 +294,12 @@ function NodeTile({ x, y, node }: { x: number; y: number; node: NodeDef }) {
         {node.title}
       </text>
       <text
-        x={66}
-        y={58}
+        x={60}
+        y={H / 2 + 14}
+        dominantBaseline="middle"
         fontFamily="var(--font-sans, Inter), sans-serif"
         fontSize={11.5}
-        fill="rgba(210, 232, 216, 0.85)"
+        fill="rgba(200, 225, 208, 0.85)"
       >
         {node.sub}
       </text>
