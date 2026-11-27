@@ -141,18 +141,17 @@ export function RetentionLoop() {
       >
         <defs>
           <radialGradient id="rl-aura" cx="50%" cy="50%" r="55%">
-            <stop offset="0%" stopColor="#8FE1B0" stopOpacity="0.28" />
-            <stop offset="55%" stopColor="#4FB683" stopOpacity="0.1" />
+            <stop offset="0%" stopColor="#4FB683" stopOpacity="0.14" />
+            <stop offset="55%" stopColor="#1E5235" stopOpacity="0.06" />
             <stop offset="100%" stopColor="#0C2419" stopOpacity="0" />
           </radialGradient>
           <linearGradient id="rl-node-fill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#B8ECC9" stopOpacity="0.55" />
-            <stop offset="55%" stopColor="#4FA876" stopOpacity="0.38" />
-            <stop offset="100%" stopColor="#1E5235" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#2E6B47" stopOpacity="1" />
+            <stop offset="100%" stopColor="#154A31" stopOpacity="1" />
           </linearGradient>
           <linearGradient id="rl-center-fill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#CDF2DB" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#3C8A5E" stopOpacity="0.5" />
+            <stop offset="0%" stopColor="#3C8A5E" stopOpacity="1" />
+            <stop offset="100%" stopColor="#1E5235" stopOpacity="1" />
           </linearGradient>
           <filter id="rl-glow" x="-100%" y="-100%" width="300%" height="300%">
             <feGaussianBlur stdDeviation="4" result="b1" />
@@ -164,11 +163,11 @@ export function RetentionLoop() {
             </feMerge>
           </filter>
           <filter id="rl-node-glow" x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur stdDeviation="9" result="blur" />
+            <feGaussianBlur stdDeviation="8" result="blur" />
             <feColorMatrix
               in="blur"
               type="matrix"
-              values="0 0 0 0 0.56  0 0 0 0 0.88  0 0 0 0 0.68  0 0 0 0.9 0"
+              values="0 0 0 0 0.3  0 0 0 0 0.52  0 0 0 0 0.4  0 0 0 0.35 0"
               result="tint"
             />
             <feMerge>
@@ -179,7 +178,7 @@ export function RetentionLoop() {
         </defs>
 
         {/* Ambient aura */}
-        <ellipse cx={CENTER.x} cy={CENTER.y} rx={420} ry={340} fill="url(#rl-aura)" />
+        <ellipse cx={CENTER.x} cy={CENTER.y} rx={340} ry={260} fill="url(#rl-aura)" />
 
         {/* Faint guide ring */}
         <circle
@@ -187,8 +186,8 @@ export function RetentionLoop() {
           cy={CENTER.y}
           r={NODE_RADIUS}
           fill="none"
-          stroke="rgba(180, 230, 200, 0.14)"
-          strokeWidth={1.5}
+          stroke="rgba(180, 230, 200, 0.08)"
+          strokeWidth={1}
           strokeDasharray="3 8"
         />
 
@@ -201,8 +200,8 @@ export function RetentionLoop() {
               key={`arc-${n.id}`}
               d={`M ${start.x.toFixed(1)} ${start.y.toFixed(1)} A ${NODE_RADIUS} ${NODE_RADIUS} 0 0 1 ${end.x.toFixed(1)} ${end.y.toFixed(1)}`}
               fill="none"
-              stroke="rgba(207, 232, 213, 0.45)"
-              strokeWidth={1.4}
+              stroke="rgba(207, 232, 213, 0.22)"
+              strokeWidth={1.2}
               strokeLinecap="round"
             />
           );
@@ -217,13 +216,14 @@ export function RetentionLoop() {
             height={88}
             rx={16}
             fill="url(#rl-center-fill)"
-            stroke="rgba(200, 245, 215, 0.55)"
+            stroke="rgba(200, 245, 215, 0.4)"
             strokeWidth={1}
           />
           <text
             x={CENTER.x}
-            y={CENTER.y - 6}
+            y={CENTER.y - 10}
             textAnchor="middle"
+            dominantBaseline="middle"
             fontFamily="var(--font-mono, 'IBM Plex Mono'), monospace"
             fontSize={11}
             letterSpacing="0.18em"
@@ -233,8 +233,9 @@ export function RetentionLoop() {
           </text>
           <text
             x={CENTER.x}
-            y={CENTER.y + 20}
+            y={CENTER.y + 14}
             textAnchor="middle"
+            dominantBaseline="middle"
             fontFamily="var(--font-display, 'Bricolage Grotesque'), sans-serif"
             fontWeight={700}
             fontSize={20}
@@ -285,17 +286,18 @@ function NodeTile({
       <rect
         width={W}
         height={H}
-        rx={16}
+        rx={14}
         fill="url(#rl-node-fill)"
-        stroke="rgba(190, 240, 210, 0.45)"
+        stroke="rgba(170, 220, 190, 0.35)"
         strokeWidth={1}
       />
       <g transform={`translate(26, ${H / 2})`}>
         <NodeIcon icon={node.icon} />
       </g>
       <text
-        x={64}
-        y={36}
+        x={60}
+        y={H / 2 - 6}
+        dominantBaseline="middle"
         fontFamily="var(--font-display, 'Bricolage Grotesque'), sans-serif"
         fontWeight={700}
         fontSize={15}
@@ -305,11 +307,12 @@ function NodeTile({
         {node.title}
       </text>
       <text
-        x={64}
-        y={56}
+        x={60}
+        y={H / 2 + 14}
+        dominantBaseline="middle"
         fontFamily="var(--font-sans, Inter), sans-serif"
         fontSize={11.5}
-        fill="rgba(210, 232, 216, 0.85)"
+        fill="rgba(200, 225, 208, 0.85)"
       >
         {node.sub}
       </text>
