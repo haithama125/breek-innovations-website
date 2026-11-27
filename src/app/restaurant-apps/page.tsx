@@ -6,6 +6,7 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { BookACall } from "@/components/BookACall";
 import { Work } from "@/components/Work";
 import { Testimonials } from "@/components/Testimonials";
+import { RevealObserver } from "@/components/RevealObserver";
 import { RestaurantWhyUs } from "@/components/icp-sections/RestaurantWhyUs";
 import { RetentionLoop } from "@/components/icp-graphics/RetentionLoop";
 import { ContactTrigger } from "@/components/ContactFormModal";
@@ -406,6 +407,7 @@ export default function RestaurantAppsPage() {
         <FinalCTA />
       </main>
       <Footer />
+      <RevealObserver />
 
       <Script
         id="ld-service-restaurant"

@@ -4,6 +4,12 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FinalCTA } from "@/components/FinalCTA";
 import { BookACall } from "@/components/BookACall";
+import { Work } from "@/components/Work";
+import { Testimonials } from "@/components/Testimonials";
+import { RevealObserver } from "@/components/RevealObserver";
+import { SocialDmvWhyUs } from "@/components/icp-sections/SocialDmvWhyUs";
+import { DmvReachMap } from "@/components/icp-graphics/DmvReachMap";
+import { ContactTrigger } from "@/components/ContactFormModal";
 
 const SITE_URL = "https://breek-innovations.com";
 const PAGE_URL = `${SITE_URL}/social-media-marketing-dmv/`;
@@ -34,6 +40,17 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
+
+const STATS = [
+  { stat: "+180%", label: "Instagram growth", who: "First 90 days" },
+  { stat: "42", label: "Walk-ins / mo", who: "From local ads ($600 spend)" },
+  { stat: "4.9★", label: "Google rating lift", who: "Review response cadence" },
+  { stat: "5 mi", label: "Ad targeting radius", who: "Reach, not vanity" },
+  { stat: "60 days", label: "To local-pack move", who: "Average" },
+  { stat: "$0", label: "Monthly retainer", who: "Commission only" },
+  { stat: "DC · MD · VA", label: "On-site content", who: "Where we show up" },
+  { stat: "7", label: "Platforms covered", who: "The ones that convert" },
+];
 
 const FAQS: Array<{ q: string; a: string }> = [
   {
@@ -71,11 +88,7 @@ const PAGE_JSONLD = {
   "@type": "Service",
   name: "Social media marketing for DMV small businesses",
   description: DESCRIPTION,
-  provider: {
-    "@type": "Organization",
-    name: "Breek Innovations",
-    url: SITE_URL,
-  },
+  provider: { "@type": "Organization", name: "Breek Innovations", url: SITE_URL },
   serviceType: "Social media management and local marketing",
   areaServed: [
     { "@type": "City", name: "Washington", containedInPlace: "District of Columbia" },
@@ -104,12 +117,7 @@ const BREADCRUMB_JSONLD = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Social media marketing (DMV)",
-      item: PAGE_URL,
-    },
+    { "@type": "ListItem", position: 2, name: "Social media marketing (DMV)", item: PAGE_URL },
   ],
 };
 
@@ -118,7 +126,90 @@ export default function SocialMediaMarketingDmvPage() {
     <div className="min-h-screen bg-[#F5F6F0] text-[#13201A]">
       <Header />
       <main>
-        {/* Hero */}
+        {/* 1. Hero */}
+        <section className="mx-auto max-w-[1240px] px-7 pt-14 pb-10 md:pt-24 md:pb-6">
+          <div className="mx-auto max-w-[1000px] text-center">
+            <p className="font-mono text-[12px] uppercase tracking-[0.22em] text-[#2E6B47]">
+              DC · Maryland · Virginia
+            </p>
+            <h1
+              className="mt-5 font-display font-bold m-0 text-balance"
+              style={{
+                fontSize: "clamp(48px, 7.2vw, 100px)",
+                lineHeight: 0.99,
+                letterSpacing: "-0.045em",
+              }}
+            >
+              Social media that fills your{" "}
+              <span style={{ color: "#2E6B47" }}>tables.</span>
+            </h1>
+            <p
+              className="mx-auto mt-7 max-w-[680px] text-pretty text-black"
+              style={{ fontSize: "clamp(17px, 1.4vw, 20px)", lineHeight: 1.55 }}
+            >
+              A local team shooting original content at your storefront,
+              posting daily across Instagram, TikTok, Facebook, and Google
+              Business Profile, and responding in your voice. Commission-based
+              — we earn when you do.
+            </p>
+            <div className="mt-9 flex flex-wrap justify-center gap-3">
+              <BookACall className="text-base px-[30px] py-4" source="social-dmv-hero">
+                Book a call
+              </BookACall>
+              <ContactTrigger
+                source="social-dmv-hero"
+                className="pill-outline inline-flex items-center justify-center rounded-full px-[30px] py-4 text-base font-semibold"
+              >
+                Get in touch
+              </ContactTrigger>
+            </div>
+          </div>
+        </section>
+
+        {/* 2. Stats marquee */}
+        <section className="pb-10 pt-6 md:pt-10">
+          <h2
+            className="mx-7 mb-11 text-center font-display font-bold"
+            style={{ fontSize: "clamp(28px, 3.6vw, 44px)", letterSpacing: "-0.035em" }}
+          >
+            What local owners actually get
+          </h2>
+          <div
+            className="overflow-hidden"
+            style={{
+              WebkitMaskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
+              maskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
+            }}
+          >
+            <div
+              className="flex w-max gap-4"
+              style={{ animation: "marquee 45s linear infinite" }}
+            >
+              {[...STATS, ...STATS].map((r, i) => (
+                <article
+                  key={i}
+                  className="w-[280px] flex-none rounded-[20px] border border-[#DCE3DA] bg-white p-[26px]"
+                >
+                  <div
+                    className="font-display text-[38px] font-bold leading-none text-[#2E6B47]"
+                    style={{ letterSpacing: "-0.04em" }}
+                  >
+                    {r.stat}
+                  </div>
+                  <div className="mt-2.5 text-[15px] font-medium">{r.label}</div>
+                  <div className="mt-[22px] border-t border-[#EDF1EC] pt-4 text-[13px] text-[#6B776F]">
+                    {r.who}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 3. WhyUs tabs */}
+        <SocialDmvWhyUs />
+
+        {/* 4. Signature graphic — DMV Reach Map */}
         <section
           className="relative overflow-hidden text-[#F0F4EF]"
           style={{
@@ -126,243 +217,152 @@ export default function SocialMediaMarketingDmvPage() {
               "radial-gradient(90% 120% at 50% 100%, #2F6A49 0%, #164029 48%, #0C2419 100%)",
           }}
         >
-          <div className="mx-auto max-w-[1180px] px-7 pt-20 pb-24">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#9FD0AE]">
-              DC · Maryland · Virginia
-            </p>
-            <h1
-              className="mt-5 max-w-[920px] font-display font-bold"
-              style={{
-                fontSize: "clamp(38px, 5.2vw, 68px)",
-                lineHeight: 1.02,
-                letterSpacing: "-0.045em",
-              }}
-            >
-              Social media that fills your tables, chairs, and sidewalks.
-            </h1>
-            <p className="mt-6 max-w-[640px] text-[17px] leading-[1.6] text-[#C9D6CD]">
-              A local team shooting original content at your storefront,
-              posting daily across Instagram, TikTok, Facebook, and Google
-              Business Profile, and responding in your voice. Commission-based
-              — we earn when you do.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <BookACall className="text-base px-7 py-4" source="social-dmv-hero">
-                Book a 30-min call
-              </BookACall>
-              <a
-                href="#what-we-do"
-                className="inline-flex items-center justify-center rounded-full border border-white/35 px-6 py-4 text-[15px] font-semibold text-[#F0F4EF] transition-colors hover:border-[#F0F4EF]"
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 opacity-[0.06]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 1px 1px, #F0F4EF 1px, transparent 0)",
+              backgroundSize: "28px 28px",
+            }}
+          />
+          <div className="relative mx-auto max-w-[1240px] px-7 py-24">
+            <div className="mb-10 max-w-[720px]">
+              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#9FD0AE]">
+                Reach, mapped
+              </p>
+              <h2
+                className="m-0 mt-4 font-display font-bold"
+                style={{
+                  fontSize: "clamp(34px, 4.2vw, 56px)",
+                  lineHeight: 1.02,
+                  letterSpacing: "-0.04em",
+                }}
               >
-                See what we do
-              </a>
+                Every post ripples across the DMV.
+              </h2>
+              <p className="m-0 mt-5 max-w-[560px] text-[16.5px] leading-[1.6] text-[#C9D6CD]">
+                A Reel shot at your counter. A Google Business post that
+                surfaces when someone searches nearby. A Yelp reply that moves
+                you up a slot. Every surface, working the same radius around
+                your door.
+              </p>
             </div>
+            <DmvReachMap />
           </div>
         </section>
 
-        {/* Who */}
-        <section className="bg-[#F5F6F0] py-20">
-          <div className="mx-auto max-w-[920px] px-7">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#4C8A62]">
-              Who we work with
-            </p>
-            <h2
-              className="mt-4 font-display font-bold"
-              style={{
-                fontSize: "clamp(28px, 3.6vw, 42px)",
-                lineHeight: 1.08,
-                letterSpacing: "-0.035em",
-              }}
-            >
-              Brick-and-mortar SMBs with a real door to open.
-            </h2>
-            <p className="mt-5 max-w-[640px] text-[15.5px] leading-[1.65] text-[#4D5A51]">
-              Restaurants in Shaw, salons in Clarendon, gyms in Bethesda,
-              med spas in Tysons, boutiques in Georgetown, studios in Silver
-              Spring. If your revenue depends on people showing up in person,
-              this is built for you.
-            </p>
-            <div className="mt-8 grid gap-3 text-[14px] font-medium text-[#13201A] md:grid-cols-4">
-              {[
-                "Restaurants & cafes",
-                "Bars & lounges",
-                "Salons & barbers",
-                "Gyms & studios",
-                "Med spas & wellness",
-                "Dental practices",
-                "Boutiques & retail",
-                "Local services",
-              ].map((cat) => (
-                <div
-                  key={cat}
-                  className="rounded-xl border border-[#DCE3DA] bg-white px-4 py-3"
-                >
-                  {cat}
+        {/* 5. Work */}
+        <Work />
+
+        {/* 6. Testimonials */}
+        <Testimonials />
+
+        {/* 7. How it works */}
+        <section className="mx-auto max-w-[1240px] px-7 py-24">
+          <h2
+            className="mb-12 font-display font-bold"
+            style={{
+              fontSize: "clamp(34px, 4.2vw, 56px)",
+              lineHeight: 1.02,
+              letterSpacing: "-0.04em",
+            }}
+          >
+            How we work with you
+          </h2>
+          <div
+            className="grid gap-5"
+            style={{ gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))" }}
+          >
+            {[
+              {
+                label: "01 · WEEK 1",
+                title: "Scoping call",
+                body: "We walk your current numbers (POS, OpenTable, booking tool). We agree on what counts as a new customer and the commission rate.",
+              },
+              {
+                label: "02 · WEEKS 2–4",
+                title: "On-site shoot",
+                body: "Our videographer shows up at your door. One shoot produces 3 to 4 weeks of Reels, TikToks, and photo sets in your brand.",
+              },
+              {
+                label: "03 · WEEKS 2–12",
+                title: "90-day ramp",
+                body: "Daily posting, GBP, review responses, DM handling. Local ads on the pieces that work. Commission capped low during ramp.",
+              },
+              {
+                label: "04 · ONGOING",
+                title: "Standard commission",
+                body: "Monthly statement showing attributable revenue and what you owe. Cancel anytime. No retainer, no termination fee.",
+              },
+            ].map((s) => (
+              <div key={s.title} className="border-t-[3px] border-[#2E6B47] pt-6">
+                <div className="mb-3.5 font-mono text-xs text-[#2E6B47]">{s.label}</div>
+                <div className="mb-2.5 font-display text-2xl font-bold" style={{ letterSpacing: "-0.02em" }}>
+                  {s.title}
                 </div>
-              ))}
-            </div>
+                <div className="text-[15px] leading-[1.55] text-[#4D5A51]">{s.body}</div>
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* What we do */}
-        <section id="what-we-do" className="bg-white py-24">
-          <div className="mx-auto max-w-[1080px] px-7">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#4C8A62]">
-              What we do
-            </p>
-            <h2
-              className="mt-4 max-w-[760px] font-display font-bold"
-              style={{
-                fontSize: "clamp(28px, 3.6vw, 42px)",
-                lineHeight: 1.08,
-                letterSpacing: "-0.035em",
-              }}
-            >
-              Everything that touches your social presence, under one team.
-            </h2>
-            <ul className="mt-10 grid gap-6 md:grid-cols-2">
-              {[
-                {
-                  h: "On-site content shoots",
-                  p: "A videographer at your location monthly, capturing Reels, TikToks, and photo sets that look like a local person made them, not a stock-asset agency.",
-                },
-                {
-                  h: "Daily posting across platforms",
-                  p: "Instagram, TikTok, and Facebook posted and scheduled by our team. Local hashtags, geotags, trending audio chosen for your audience, not a generic template.",
-                },
-                {
-                  h: "Google Business Profile + reviews",
-                  p: "Weekly GBP posts, photo uploads, Q&A moderation, and review responses on Google and Yelp. This is the lever that moves \"[your category] near me\" ranking.",
-                },
-                {
-                  h: "Local ad spend",
-                  p: "We boost the organic content that's already working, targeted to a 5 to 10 mile radius around your location. Meta and TikTok ads. No wasted impressions in Idaho.",
-                },
-                {
-                  h: "DMs, comments, and inbound",
-                  p: "We respond in your voice during business hours, escalate the owner-only ones, and tag anything that smells like a booking opportunity into your CRM.",
-                },
-                {
-                  h: "Monthly reporting that matters",
-                  p: "Followers, reach, and engagement, but the number you'll actually read is attributable foot traffic: bookings, redemptions, and new customers we can tie back to a post or an ad.",
-                },
-              ].map((item) => (
-                <li
-                  key={item.h}
-                  className="rounded-2xl border border-[#E6EBE4] p-6"
-                >
-                  <h3 className="m-0 font-display text-[18px] font-bold tracking-[-0.015em] text-[#13201A]">
-                    {item.h}
-                  </h3>
-                  <p className="m-0 mt-3 text-[15px] leading-[1.6] text-[#4D5A51]">
-                    {item.p}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* Platforms */}
-        <section className="bg-[#F5F6F0] py-20">
-          <div className="mx-auto max-w-[920px] px-7">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#4C8A62]">
-              Platforms we run
-            </p>
-            <h2
-              className="mt-4 font-display font-bold"
-              style={{
-                fontSize: "clamp(26px, 3.2vw, 38px)",
-                lineHeight: 1.1,
-                letterSpacing: "-0.035em",
-              }}
-            >
-              The ones that actually move local revenue.
-            </h2>
-            <p className="mt-5 max-w-[640px] text-[15.5px] leading-[1.65] text-[#4D5A51]">
-              We skip LinkedIn, X, and Threads for storefront SMBs unless
-              there&apos;s a specific B2B angle. Attention is a budget — we spend
-              it where your customers already are.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-2.5 text-[13.5px] text-[#13201A]">
-              {[
-                "Instagram (Reels + feed + Stories)",
-                "TikTok",
-                "Facebook",
-                "Google Business Profile",
-                "Yelp",
-                "Nextdoor",
-                "Meta Ads Manager",
-                "TikTok Ads",
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-[#DCE3DA] bg-white px-4 py-1.5 font-medium"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* How pricing works */}
+        {/* 8. Pricing */}
         <section className="bg-white py-20">
-          <div className="mx-auto max-w-[920px] px-7">
+          <div className="mx-auto max-w-[1080px] px-7">
             <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#4C8A62]">
               How pricing works
             </p>
             <h2
               className="mt-4 font-display font-bold"
               style={{
-                fontSize: "clamp(26px, 3.2vw, 38px)",
-                lineHeight: 1.1,
+                fontSize: "clamp(32px, 3.8vw, 48px)",
+                lineHeight: 1.05,
                 letterSpacing: "-0.035em",
               }}
             >
-              You pay when we move the needle. Not before.
+              You pay when we move the needle.
             </h2>
-            <div className="mt-8 grid gap-5 md:grid-cols-3">
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
               {[
                 {
-                  n: "01",
                   h: "Scoping call",
-                  p: "We walk through your current numbers (POS, OpenTable, booking software, whatever you run), figure out what counts as a new customer, and agree on the attribution model and commission rate.",
+                  sub: "Free · 30 min",
+                  w: "Week 1",
+                  p: "We review your current numbers and agree on attribution. If we can't tie activity to revenue, we tell you so.",
                 },
                 {
-                  n: "02",
                   h: "90-day ramp",
-                  p: "We shoot content, build your content library, run the first ads, and tune reporting. Commission is capped low during ramp so you're not paying us while the account warms up.",
+                  sub: "Commission capped low",
+                  w: "Weeks 2 to 12",
+                  p: "We shoot, we post, we build the content library, we tune ads. You don't pay standard commission until the account is warm.",
                 },
                 {
-                  n: "03",
                   h: "Ongoing",
-                  p: "Standard commission kicks in. Transparent monthly invoice showing the attributable revenue and what you owe. Cancel anytime — no retainer, no termination fee.",
+                  sub: "Standard commission",
+                  w: "Month 4 onward",
+                  p: "Transparent monthly invoice showing attributable revenue and what you owe. Cancel anytime, no termination fee.",
                 },
-              ].map((step) => (
-                <div
-                  key={step.n}
-                  className="rounded-2xl border border-[#DCE3DA] bg-[#F5F6F0] p-6"
-                >
-                  <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#4C8A62]">
-                    {step.n}
-                  </div>
-                  <h3 className="m-0 mt-2 font-display text-[17px] font-bold tracking-[-0.015em] text-[#13201A]">
-                    {step.h}
+              ].map((tier) => (
+                <div key={tier.h} className="rounded-2xl border border-[#DCE3DA] bg-[#F5F6F0] p-6">
+                  <h3 className="m-0 font-display text-[18px] font-bold tracking-[-0.015em] text-[#13201A]">
+                    {tier.h}
                   </h3>
-                  <p className="m-0 mt-3 text-[14.5px] leading-[1.6] text-[#4D5A51]">
-                    {step.p}
+                  <p className="m-0 mt-2 font-mono text-[12px] uppercase tracking-[0.14em] text-[#6B776F]">
+                    {tier.sub}
+                  </p>
+                  <p className="m-0 mt-1 text-[13.5px] text-[#4D5A51]">
+                    {tier.w}
+                  </p>
+                  <p className="m-0 mt-4 text-[14.5px] leading-[1.55] text-[#4D5A51]">
+                    {tier.p}
                   </p>
                 </div>
               ))}
             </div>
             <p className="mt-6 text-[13.5px] text-[#6B776F]">
-              Ad spend is a separate line item, billed at cost. No markup, no
-              hidden margin — you see the Meta and TikTok invoices directly.{" "}
-              <a
-                href="/#pricing"
-                className="text-[#2E6B47] underline-offset-2 hover:underline"
-              >
+              Ad spend is a separate line item billed at cost — no markup.{" "}
+              <a href="/#pricing" className="text-[#2E6B47] underline-offset-2 hover:underline">
                 See all pricing
               </a>
               .
@@ -370,7 +370,7 @@ export default function SocialMediaMarketingDmvPage() {
           </div>
         </section>
 
-        {/* FAQ */}
+        {/* 9. FAQ */}
         <section className="bg-[#F5F6F0] py-24">
           <div className="mx-auto max-w-[880px] px-7">
             <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#4C8A62]">
@@ -388,11 +388,7 @@ export default function SocialMediaMarketingDmvPage() {
             </h2>
             <div className="mt-10 divide-y divide-[#DCE3DA] border-y border-[#DCE3DA]">
               {FAQS.map((item, i) => (
-                <details
-                  key={item.q}
-                  className="group py-6"
-                  {...(i === 0 ? { open: true } : {})}
-                >
+                <details key={item.q} className="group py-6" {...(i === 0 ? { open: true } : {})}>
                   <summary className="flex cursor-pointer list-none items-start justify-between gap-6">
                     <h3 className="m-0 flex-1 font-display text-[17px] font-semibold leading-[1.35] tracking-[-0.015em] text-[#13201A] md:text-[19px]">
                       {item.q}
@@ -415,9 +411,11 @@ export default function SocialMediaMarketingDmvPage() {
           </div>
         </section>
 
+        {/* 10. Final CTA */}
         <FinalCTA />
       </main>
       <Footer />
+      <RevealObserver />
 
       <Script
         id="ld-service-social-dmv"
